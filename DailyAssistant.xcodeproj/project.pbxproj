@@ -12,6 +12,13 @@
 		05B82D96220B5C7400ED1508 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B82D94220B5C7400ED1508 /* Main.storyboard */; };
 		05B82D98220B5C7500ED1508 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B82D97220B5C7500ED1508 /* Assets.xcassets */; };
 		05B82D9B220B5C7500ED1508 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B82D99220B5C7500ED1508 /* LaunchScreen.storyboard */; };
+		05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DDE220CE51B00ED1508 /* EventbriteModel.swift */; };
+		05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DE2220CE5E000ED1508 /* EventbriteAPIClient.swift */; };
+		05B82DE6220CE69400ED1508 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DE5220CE69400ED1508 /* AppError.swift */; };
+		05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DE7220CE6F800ED1508 /* NetworkHelper.swift */; };
+		05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */; };
+		05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DEB220CF41700ED1508 /* WeatherModel.swift */; };
+		05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DED220CF48400ED1508 /* SecretKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		05B82D97220B5C7500ED1508 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B82D9A220B5C7500ED1508 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B82D9C220B5C7500ED1508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05B82DDE220CE51B00ED1508 /* EventbriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventbriteModel.swift; sourceTree = "<group>"; };
+		05B82DE2220CE5E000ED1508 /* EventbriteAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventbriteAPIClient.swift; sourceTree = "<group>"; };
+		05B82DE5220CE69400ED1508 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		05B82DE7220CE6F800ED1508 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
+		05B82DEB220CF41700ED1508 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		05B82DED220CF48400ED1508 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +68,45 @@
 		05B82D8F220B5C7400ED1508 /* DailyAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				05B82DE4220CE5E500ED1508 /* Network Services */,
 				05B82D90220B5C7400ED1508 /* AppDelegate.swift */,
-				05B82D92220B5C7400ED1508 /* ViewController.swift */,
+				05B82DE1220CE52E00ED1508 /* Controllers */,
 				05B82D94220B5C7400ED1508 /* Main.storyboard */,
+				05B82DE0220CE52300ED1508 /* Models */,
 				05B82D97220B5C7500ED1508 /* Assets.xcassets */,
 				05B82D99220B5C7500ED1508 /* LaunchScreen.storyboard */,
 				05B82D9C220B5C7500ED1508 /* Info.plist */,
 			);
 			path = DailyAssistant;
+			sourceTree = "<group>";
+		};
+		05B82DE0220CE52300ED1508 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				05B82DDE220CE51B00ED1508 /* EventbriteModel.swift */,
+				05B82DEB220CF41700ED1508 /* WeatherModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		05B82DE1220CE52E00ED1508 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				05B82D92220B5C7400ED1508 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		05B82DE4220CE5E500ED1508 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				05B82DE2220CE5E000ED1508 /* EventbriteAPIClient.swift */,
+				05B82DE7220CE6F800ED1508 /* NetworkHelper.swift */,
+				05B82DE5220CE69400ED1508 /* AppError.swift */,
+				05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */,
+				05B82DED220CF48400ED1508 /* SecretKeys.swift */,
+			);
+			path = "Network Services";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +181,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B82D93220B5C7400ED1508 /* ViewController.swift in Sources */,
+				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
+				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
+				05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */,
+				05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */,
+				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
+				05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */,
+				05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
