@@ -13,7 +13,7 @@ class ToDoViewController: UIViewController {
     
     public lazy var toDoTableView: UITableView = {
         var tv = UITableView()//(frame: .zero, style: .plain)
-        tv.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+       // tv.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         tv = UITableView(frame: .zero, style: .grouped)
         tv.delegate = self
         tv.dataSource = self
@@ -22,14 +22,18 @@ class ToDoViewController: UIViewController {
         
         override func viewDidLoad() {
             super.viewDidLoad()
-          //  self.view.addSubview(toDoTableView)
+            view.addSubview(toDoTableView)
+            view.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
             setUp()
             toDoTableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
             toDoTableView.reloadData()
         }
 
     func setUp() {
-           self.view.addSubview(toDoTableView)
+        navigationItem.title = "Add New Event"
+        navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
     toDoTableView.translatesAutoresizingMaskIntoConstraints = false
         toDoTableView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         toDoTableView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
@@ -43,7 +47,7 @@ class ToDoViewController: UIViewController {
 extension ToDoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = toDoTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell() }
-    
+    cell.textLabel?.text = "hola hola hola"
         return cell
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
