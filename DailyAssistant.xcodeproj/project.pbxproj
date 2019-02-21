@@ -24,6 +24,8 @@
 		05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */; };
 		05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DEB220CF41700ED1508 /* WeatherModel.swift */; };
 		05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DED220CF48400ED1508 /* SecretKeys.swift */; };
+		05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA07221C8BD3002579DC /* NearbyView.swift */; };
+		05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA09221C8BFA002579DC /* NearbyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIClient.swift; sourceTree = "<group>"; };
 		05B82DEB220CF41700ED1508 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		05B82DED220CF48400ED1508 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		05E3CA07221C8BD3002579DC /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
+		05E3CA09221C8BFA002579DC /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,8 @@
 				0586C249221399050095C3AF /* TableViewCell.swift */,
 				0586C22622122A740095C3AF /* ToDoViewController.swift */,
 				0586C22822122AB10095C3AF /* ToDoView.swift */,
+				05E3CA07221C8BD3002579DC /* NearbyView.swift */,
+				05E3CA09221C8BFA002579DC /* NearbyViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -196,9 +202,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
+				05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */,
 				0586C22722122A740095C3AF /* ToDoViewController.swift in Sources */,
 				05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */,
 				05B82D93220B5C7400ED1508 /* EventViewController.swift in Sources */,
+				05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */,
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
