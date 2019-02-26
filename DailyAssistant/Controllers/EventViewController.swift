@@ -19,7 +19,7 @@ class EventViewController: UIViewController {
     }
 
     func dumpData() {
-        EventbriteAPIClient.getEvent { (appError, event) in
+        EventbriteAPIClient.getEvent(keyword: "yoga"){ (appError, event) in
             if let appError = appError {
                 print(appError)
             }else if let events = event {

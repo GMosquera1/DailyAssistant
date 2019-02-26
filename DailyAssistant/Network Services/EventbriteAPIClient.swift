@@ -9,7 +9,8 @@
 import Foundation
 
 final class EventbriteAPIClient {
-    static func getEvent(completionHandler: @escaping(AppError?, [Event]?) -> Void) {
+    static func getEvent(keyword: String, completionHandler: @escaping(AppError?, [Event]?) -> Void) {
+        // TO-DO = Check URL for search functionality 
         let URL = "https://www.eventbriteapi.com/v3/events/search?location.within=10km&expand=venue-H'Authorization:BearerPERSONAL_OAUTH_TOKEN'&location.address=vancovuer&token=HGCVIXQ3FJZNEZUHE4G2"
         NetworkHelper.shared.performDataTask(endpointURLString: URL, httpMethod: "GET", httpBody: nil) { (appError, data) in
             if let error = appError {

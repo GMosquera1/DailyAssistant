@@ -26,6 +26,8 @@
 		05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82DED220CF48400ED1508 /* SecretKeys.swift */; };
 		05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA07221C8BD3002579DC /* NearbyView.swift */; };
 		05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA09221C8BFA002579DC /* NearbyViewController.swift */; };
+		05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA3D2224910E002579DC /* NearbyEventsViewController.swift */; };
+		05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA3F2225C7CA002579DC /* NearbyTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		05B82DED220CF48400ED1508 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		05E3CA07221C8BD3002579DC /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
 		05E3CA09221C8BFA002579DC /* NearbyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyViewController.swift; sourceTree = "<group>"; };
+		05E3CA3D2224910E002579DC /* NearbyEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyEventsViewController.swift; sourceTree = "<group>"; };
+		05E3CA3F2225C7CA002579DC /* NearbyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 				0586C22622122A740095C3AF /* ToDoViewController.swift */,
 				0586C22822122AB10095C3AF /* ToDoView.swift */,
 				05E3CA07221C8BD3002579DC /* NearbyView.swift */,
+				05E3CA3F2225C7CA002579DC /* NearbyTableViewCell.swift */,
 				05E3CA09221C8BFA002579DC /* NearbyViewController.swift */,
+				05E3CA3D2224910E002579DC /* NearbyEventsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */,
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
 				05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */,
 				0586C22722122A740095C3AF /* ToDoViewController.swift in Sources */,
@@ -210,6 +217,7 @@
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
+				05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */,
 				05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */,
 				05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */,
 				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
