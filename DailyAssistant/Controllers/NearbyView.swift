@@ -18,25 +18,33 @@ class NearbyView: UIView {
         searchBar.placeholder = "Search Nearby Events"
         return searchBar
     }()
-
+    
     public lazy var mapView: MKMapView = {
         let map = MKMapView()
         map.layer.cornerRadius = 5.0
         return map
     }()
-
+    
     public lazy var tableView: UITableView = {
-        let cellLayout = UITableViewCell()
-        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
+        //let cellLayout = UITableViewCell()
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.frame.width
+        let displayHeight: CGFloat = self.frame.height
+        
+        let tableView = UITableView()
+        //(frame: CGRect (x: 10, y: 10, width: 100, height: 200))
+        //(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight))
+        
+        tableView.register(NearbyTableViewCell.self, forCellReuseIdentifier: "NearbyTableViewCell")
         tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         tableView.layer.cornerRadius = 10.0
         return tableView
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
         commonInt()
-        self.tableView.register(NearbyTableViewCell.self, forCellReuseIdentifier: "NearbyTableViewCell")
+        //  self.tableView.register(NearbyTableViewCell.self, forCellReuseIdentifier: "NearbyTableViewCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,7 +62,7 @@ class NearbyView: UIView {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor), searchBar.leadingAnchor.constraint(equalTo: leadingAnchor), searchBar.trailingAnchor.constraint(equalTo: trailingAnchor), mapView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0), tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])
+        NSLayoutConstraint.activate([searchBar.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor), searchBar.leadingAnchor.constraint(equalTo: leadingAnchor), searchBar.trailingAnchor.constraint(equalTo: trailingAnchor), mapView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 0), mapView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0), mapView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), mapView.heightAnchor.constraint(equalToConstant: 375), tableView.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 0), tableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0), tableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0), tableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])
         
     }
 }
