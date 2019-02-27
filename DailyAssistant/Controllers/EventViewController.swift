@@ -10,24 +10,26 @@ import UIKit
 
 class EventViewController: UIViewController {
 
+    let eventView = EventView()
+    
     var myEvents = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dumpData()
+    view.addSubview(eventView)
   
     }
 
-    func dumpData() {
-        EventbriteAPIClient.getEvent(keyword: "yoga"){ (appError, event) in
-            if let appError = appError {
-                print(appError)
-            }else if let events = event {
-                self.myEvents = events
-                dump(self.myEvents)
-            }
-        }
-    }
+//    func dumpData() {
+//        EventbriteAPIClient.getEvent(keyword: "yoga"){ (appError, event) in
+//            if let appError = appError {
+//                print(appError)
+//            }else if let events = event {
+//                self.myEvents = events
+//                dump(self.myEvents)
+//            }
+//        }
+//    }
 
 }
 

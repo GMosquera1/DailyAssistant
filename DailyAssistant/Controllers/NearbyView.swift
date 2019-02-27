@@ -32,25 +32,22 @@ class NearbyView: UIView {
         let displayHeight: CGFloat = self.frame.height
         
         let tableView = UITableView()
-        //(frame: CGRect (x: 10, y: 10, width: 100, height: 200))
-        //(frame: CGRect(x: 0, y: barHeight, width: displayWidth, height: displayHeight))
-        
         tableView.register(NearbyTableViewCell.self, forCellReuseIdentifier: "NearbyTableViewCell")
-        tableView.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        tableView.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         tableView.layer.cornerRadius = 10.0
         return tableView
     }()
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)
-        commonInt()
+        commonInit()
         //  self.tableView.register(NearbyTableViewCell.self, forCellReuseIdentifier: "NearbyTableViewCell")
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    private func commonInt(){
+    private func commonInit(){
         setConstraints()
     }
     

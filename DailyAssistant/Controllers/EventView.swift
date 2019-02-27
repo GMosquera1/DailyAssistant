@@ -39,4 +39,23 @@ class EventView: UIView {
         return textField
     }()
 
+    override init(frame: CGRect){ super.init(frame: UIScreen.main.bounds)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    private func commonInit(){
+    setConstraints()
+}
+    
+    func setConstraints() {
+        addSubview(titleTextField)
+        addSubview(locationTextField)
+    titleTextField.translatesAutoresizingMaskIntoConstraints = false
+        locationTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([titleTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),titleTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22), titleTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22), locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 11),locationTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 22), locationTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -22), locationTextField.bottomAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.bottomAnchor, multiplier: 0)])
+    }
 }

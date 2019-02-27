@@ -15,7 +15,13 @@ class NearbyViewController: UIViewController {
     let nearbyView = NearbyView()
     private let locationManager = CLLocationManager()
     private var coordinatesToSearch = CLLocationCoordinate2D(latitude: 40.626994, longitude: -74.009727)
-    private var events = [Event]()
+    private var events = [Event]() {
+        didSet{
+            DispatchQueue.main.async {
+                self.nearbyView.tableView.reloadData()
+            }
+        }
+    }
     private var annotations = [MKAnnotation]()
     private var myCurrentRegion = MKCoordinateRegion() {
         didSet {
@@ -29,18 +35,19 @@ class NearbyViewController: UIViewController {
         title = "Nearby Events"
         view.addSubview(nearbyView)
         self.view.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Current Location", style: .plain, target: self, action: #selector(CurrentLocate))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Locate Me", style: .plain, target: self, action: #selector(CurrentLocate))
         nearbyView.mapView.delegate = self
         nearbyView.tableView.dataSource = self
         nearbyView.tableView.delegate = self
         locationManager.delegate = self
         nearbyView.searchBar.delegate = self
+        searchEvents(keyword: "yoga")
     }
     
     private func searchEvents(keyword: String){
-        EventbriteAPIClient.getEvent(keyword: "yoga") { (error, events) in
+        EventbriteAPIClient.getEvent(keyword: keyword) { (error, events) in
             if let error = error {
-                print("searching events error")
+                print("searching events error:\(error)")
             } else if let events = events {
                 self.events = events
             }
@@ -121,7 +128,8 @@ extension NearbyViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NearbyTableViewCell", for: indexPath)
+        var cell = nearbyView.tableView.dequeueReusableCell(withIdentifier: "NearbyTableViewCell", for: indexPath)
+        cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: "NearbyTableViewCell")
         let eventInfo = events[indexPath.row]
         cell.textLabel?.text = eventInfo.name.text
         cell.detailTextLabel?.text = eventInfo.name.html
