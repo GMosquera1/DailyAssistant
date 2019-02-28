@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController {
+class OverviewController: UIViewController {
     
     
     public lazy var toDoTableView: UITableView = {
@@ -30,7 +30,7 @@ class ToDoViewController: UIViewController {
         }
 
     func setUp() {
-        navigationItem.title = "Add New Event"
+        navigationItem.title = "Today's Events"
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
@@ -44,7 +44,7 @@ class ToDoViewController: UIViewController {
     }
     
 }
-extension ToDoViewController: UITableViewDataSource {
+extension OverviewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = toDoTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell() }
     cell.textLabel?.text = "hola hola hola"
@@ -58,7 +58,7 @@ extension ToDoViewController: UITableViewDataSource {
     }
 }
 
-extension ToDoViewController: UITableViewDelegate {
+extension OverviewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }

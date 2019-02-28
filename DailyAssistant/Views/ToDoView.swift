@@ -8,8 +8,13 @@
 
 import UIKit
 
-class EventView: UIView {
+class ToDoView: UIView {
 
+    public lazy var eventInfoView: UITextView = {
+        let infoView = UITextView()
+        infoView.text = "hello"
+        return infoView
+    }()
     public lazy var titleTextField: UITextField = {
         let textField = UITextField()
         textField.placeholder = "Enter Title"

@@ -10,7 +10,7 @@ import UIKit
 
 class EventViewController: UIViewController {
 
-    let eventView = EventView()
+    let eventView = ToDoView()
     
     var myEvents = [Event]()
     
