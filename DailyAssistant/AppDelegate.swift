@@ -16,14 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        window = UIWindow()
-        window?.makeKeyAndVisible()
-        
-        let agendaCollectionViewController = UIViewController()
-        agendaCollectionViewController.view.backgroundColor = .purple
-        window?.rootViewController = agendaCollectionViewController
-        return true
+//        
+//        window = UIWindow()
+//        window?.makeKeyAndVisible()
+//        
+//        //let agendaCollectionViewController = UIViewController()
+//        //agendaCollectionViewController.view.backgroundColor = .purple
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+//        let agendaCollectionViewController = AgendaCollectionViewController(collectionViewLayout: layout)
+//
+//        window?.rootViewController = agendaCollectionViewController
+      return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

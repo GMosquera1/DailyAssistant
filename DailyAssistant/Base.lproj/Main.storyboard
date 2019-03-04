@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Event View Controller-->
+        <!--To Do View Controller-->
         <scene sceneID="QMu-fO-nRs">
             <objects>
-                <viewController id="kac-DA-xK5" customClass="EventViewController" customModule="DailyAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kac-DA-xK5" customClass="ToDoViewController" customModule="DailyAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pSg-33-ta7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRg-cV-5N6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="512"/>
+            <point key="canvasLocation" x="2554" y="-224"/>
         </scene>
         <!--Overview Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -54,7 +54,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="udz-g1-Jm7" kind="relationship" relationship="viewControllers" id="Dtj-2c-CeS"/>
-                        <segue destination="0XF-9r-dX9" kind="relationship" relationship="viewControllers" id="8qc-w7-O0p"/>
                         <segue destination="0hP-L3-mtp" kind="relationship" relationship="viewControllers" id="OAY-Mh-J9h"/>
                     </connections>
                 </tabBarController>
@@ -80,25 +79,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnD-bU-li5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="865" y="-222"/>
-        </scene>
-        <!--New Event-->
-        <scene sceneID="Olp-D3-wma">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0XF-9r-dX9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Event" image="icons8-create-25" id="Vtc-hh-Lb9"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tss-P2-LaO">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="kac-DA-xK5" kind="relationship" relationship="rootViewController" id="lFe-aL-gWi"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FsL-cP-PiW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="865" y="513"/>
         </scene>
         <!--Nearby View Controller-->
         <scene sceneID="Z3T-om-Rm1">
@@ -137,7 +117,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-create-25" width="18.75" height="18.75"/>
         <image name="icons8-show-property-25" width="18.75" height="18.75"/>
         <image name="icons8-world-map-25" width="18.75" height="18.75"/>
     </resources>

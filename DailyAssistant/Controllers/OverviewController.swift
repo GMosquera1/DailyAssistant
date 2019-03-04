@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
+import EventKit
+import MapKit
 
 class OverviewController: UIViewController {
     
@@ -14,7 +17,7 @@ class OverviewController: UIViewController {
     public lazy var toDoTableView: UITableView = {
         var tv = UITableView()//(frame: .zero, style: .plain)
        // tv.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        tv = UITableView(frame: .zero, style: .grouped)
+        tv = UITableView(frame: .init(x: 25, y: 25, width: 25, height: 25) , style: .grouped)
         tv.delegate = self
         tv.dataSource = self
         return tv
@@ -34,6 +37,8 @@ class OverviewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
+        toDoTableView.translatesAutoresizingMaskIntoConstraints = false
+        
     toDoTableView.translatesAutoresizingMaskIntoConstraints = false
         toDoTableView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
         toDoTableView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
