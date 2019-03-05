@@ -13,6 +13,17 @@ import MapKit
 
 class OverviewController: UIViewController {
     
+    public var cityName = ""
+    
+    public var forecast = [Periods](){
+        didSet {
+            DispatchQueue.main.async {
+              self.overView.toDoTableView.reloadData()
+                
+            }
+        }
+    }
+    
     let overView = Overview()
     let todoView = ToDoView()
     
@@ -26,6 +37,15 @@ class OverviewController: UIViewController {
         overView.toDoTableView.backgroundColor = UIColor.clear
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .done, target: self, action: #selector(createNew))
         setUp()
+        WeatherAPIClient.searchWeather(zipcode: "11229", isZipcode: true) { (appError, periods) in
+            if let error = appError {
+                print(error.errorMessage())
+            }
+            if let periods = periods {
+                self.forecast = periods
+//                dump(self.forecast)
+            }
+        }
     }
     
     func setUp() {
@@ -77,15 +97,20 @@ extension OverviewController: UITableViewDataSource {
         case 0:
             guard let cell =
                 tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
-            cell.imageView?.image = UIImage(named: "icons8-example-500")
-            cell.textLabel?.text = "Today's Weather"
-            cell.detailTextLabel?.text = "Number"
-            cell.textLabel?.textColor = .white
+            let day = forecast[indexPath.row]
+            cell.weatherImage.image = UIImage(named: day.icon)
+            cell.weatherDay.text = "\(day.dateFormattedTime)"
+            cell.weatherHigh.text = "High: \(day.maxTempF)°F"
+            cell.weatherLow.text = "Low: \(day.minTempF)°F"
+//            cell.imageView?.image = UIImage(named: "icons8-example-500")
+//            cell.textLabel?.text = "Today's Weather"
+//            cell.detailTextLabel?.text = "Number"
+//            cell.textLabel?.textColor = .white
             cell.backgroundColor = UIColor.clear
             cell.layer.cornerRadius = 10.0
             if cell.isSelected == true {
                 cell.backgroundColor = .white
-                cell.textLabel?.textColor = .blue
+       //        cell.textLabel?.textColor = .blue
             } else {
                 cell.backgroundColor = UIColor.clear 
             }

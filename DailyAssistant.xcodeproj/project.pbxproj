@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05080BAE222ED385001ACBF2 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */; };
+		05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */; };
 		0586C2252212215E0095C3AF /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C2242212215E0095C3AF /* ToDoView.swift */; };
 		0586C22722122A740095C3AF /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22622122A740095C3AF /* OverviewController.swift */; };
 		0586C22922122AB10095C3AF /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22822122AB10095C3AF /* Overview.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
+		05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		0586C2242212215E0095C3AF /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		0586C22622122A740095C3AF /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		0586C22822122AB10095C3AF /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0586C22622122A740095C3AF /* OverviewController.swift */,
+				05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */,
 				05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */,
 				05B82D92220B5C7400ED1508 /* ToDoViewController.swift */,
 				05E3CA09221C8BFA002579DC /* NearbyViewController.swift */,
@@ -157,6 +162,7 @@
 				05E3CA3F2225C7CA002579DC /* NearbyTableViewCell.swift */,
 				05E3CA6822283F8F002579DC /* AgendaCollectionViewCell.swift */,
 				0586C249221399050095C3AF /* TableViewCell.swift */,
+				05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -232,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05080BAE222ED385001ACBF2 /* WeatherDetailsViewController.swift in Sources */,
 				05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */,
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
 				05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */,
@@ -241,6 +248,7 @@
 				05E3CA6722283F42002579DC /* AgendaCollectionViewController.swift in Sources */,
 				05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */,
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
+				05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
 				05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */,
