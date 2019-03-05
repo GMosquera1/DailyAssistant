@@ -13,23 +13,16 @@ import MapKit
 
 class OverviewController: UIViewController {
     
-    
-    public lazy var toDoTableView: UITableView = {
-        var tv = UITableView()//(frame: .zero, style: .plain)
-       // tv.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        tv = UITableView(frame: .init(x: 25, y: 25, width: 25, height: 25) , style: .grouped)
-        tv.delegate = self
-        tv.dataSource = self
-        return tv
-    }()
+    let overView = Overview()
+
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            view.addSubview(toDoTableView)
+           view.addSubview(overView)
             view.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+            overView.toDoTableView.dataSource = self
+            overView.toDoTableView.delegate = self
             setUp()
-            toDoTableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
-            toDoTableView.reloadData()
         }
 
     func setUp() {
@@ -37,26 +30,21 @@ class OverviewController: UIViewController {
         navigationController?.navigationBar.barTintColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)]
-        toDoTableView.translatesAutoresizingMaskIntoConstraints = false
-        
-    toDoTableView.translatesAutoresizingMaskIntoConstraints = false
-        toDoTableView.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1).isActive = true
-        toDoTableView.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1).isActive = true
-//        toDoTableView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-//        toDoTableView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-//
         
     }
     
 }
 extension OverviewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = toDoTableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell() }
+        guard let cell =
+            tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
     cell.textLabel?.text = "hola hola hola"
+        cell.layer.cornerRadius = 10.0
         return cell
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [2, 3, 2][section]
+        return [1, 3, 2][section]
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -66,10 +54,24 @@ extension OverviewController: UITableViewDataSource {
 extension OverviewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let arrTitles = ["Weather", "To-Do", "Events"]
+        return arrTitles[section]
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        switch indexPath.section {
+        case 0:
+            return 200
+        case 1:
+            return 35
+        case 2:
+            return 35
+        default:
+            return 100
+        }
+    }
 }
-
-
-
 
 
 
