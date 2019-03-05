@@ -10,6 +10,18 @@ import UIKit
 
 class Overview: UIView {
     
+    public lazy var weatherCV: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize.init(width: 300, height: 275)
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = UIColor.clear
+        cv.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
+        return cv
+    }()
+    
+    
     public lazy var toDoTableView: UITableView = {
              let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.frame.width
@@ -41,10 +53,14 @@ class Overview: UIView {
     
     func setConstraints(){
         addSubview(toDoTableView)
+        addSubview(weatherCV)
         
         toDoTableView.translatesAutoresizingMaskIntoConstraints = false
+        weatherCV.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 22), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 22)])
+        NSLayoutConstraint.activate([weatherCV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),weatherCV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), weatherCV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),weatherCV.bottomAnchor.constraint(equalTo: toDoTableView.topAnchor, constant: 11)])
+        
+        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: topAnchor, constant: 270), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 22)])
     }
     
 }

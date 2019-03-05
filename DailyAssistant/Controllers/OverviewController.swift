@@ -19,7 +19,7 @@ class OverviewController: UIViewController {
         didSet {
             DispatchQueue.main.async {
               self.overView.toDoTableView.reloadData()
-                
+                self.overView.weatherCV.reloadData()
             }
         }
     }
@@ -30,7 +30,8 @@ class OverviewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(overView)
+        self.view.addSubview(overView)
+
         view.backgroundColor = UIColor(patternImage: UIImage(named: "stars")!)
         overView.toDoTableView.dataSource = self
         overView.toDoTableView.delegate = self
@@ -43,9 +44,11 @@ class OverviewController: UIViewController {
             }
             if let periods = periods {
                 self.forecast = periods
-//                dump(self.forecast)
+                dump(self.forecast)
             }
         }
+        overView.weatherCV.dataSource = self
+        overView.weatherCV.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
     }
     
     func setUp() {
@@ -97,11 +100,8 @@ extension OverviewController: UITableViewDataSource {
         case 0:
             guard let cell =
                 tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
-            let day = forecast[indexPath.row]
-            cell.weatherImage.image = UIImage(named: day.icon)
-            cell.weatherDay.text = "\(day.dateFormattedTime)"
-            cell.weatherHigh.text = "High: \(day.maxTempF)°F"
-            cell.weatherLow.text = "Low: \(day.minTempF)°F"
+             let day = forecast.first
+            
 //            cell.imageView?.image = UIImage(named: "icons8-example-500")
 //            cell.textLabel?.text = "Today's Weather"
 //            cell.detailTextLabel?.text = "Number"
@@ -122,7 +122,7 @@ extension OverviewController: UITableViewDataSource {
             cell.textLabel?.text = "hola hola hola"
             cell.textLabel?.textColor = .white
             cell.layer.backgroundColor = UIColor.clear.cgColor
-            cell.backgroundColor = UIColor.clear
+            cell.backgroundColor = .red //UIColor.clear
             cell.layer.cornerRadius = 10.0
             return cell
         }
@@ -130,7 +130,17 @@ extension OverviewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return [1, 3, 2][section]
+        //let weather = Weather()
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 4
+        case 2:
+            return 2
+        default:
+            return 2
+        }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
@@ -159,21 +169,26 @@ extension OverviewController: UITableViewDelegate {
     }
 }
 
-
-
-
-class ListTableViewHeader: UITableViewHeaderFooterView {
-    
-    override init(reuseIdentifier: String?) {
-        super.init(reuseIdentifier: reuseIdentifier)
-        
-        contentView.backgroundColor = .orange
+extension OverviewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return forecast.count
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as? WeatherCollectionViewCell else { return UICollectionViewCell() }
+        let day = forecast[indexPath.row]
+        cell.weatherImage.image = UIImage(named: day.icon ?? "AppIcon")
+        cell.weatherDay.text = "\(day.dateFormattedTime.first)"
+        cell.weatherHigh.text = "High: \(day.maxTempF)°F"
+        cell.weatherLow.text = "Low: \(day.minTempF)°F"
+        return cell
     }
+    
+    
+
+    
 }
+
 
 
 class ListTableViewFooter: UITableViewHeaderFooterView {

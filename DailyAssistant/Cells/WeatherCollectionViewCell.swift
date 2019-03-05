@@ -50,5 +50,21 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .yellow 
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func setUpView(){
+        weatherDay.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([ weatherDay.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor), weatherDay.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12), weatherDay.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12), weatherDay.bottomAnchor.constraint(equalTo: bottomAnchor)
+            ])
+    }
     
 }
