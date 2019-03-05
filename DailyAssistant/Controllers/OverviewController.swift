@@ -36,11 +36,23 @@ class OverviewController: UIViewController {
 }
 extension OverviewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell =
-            tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
-    cell.textLabel?.text = "hola hola hola"
-        cell.layer.cornerRadius = 10.0
-        return cell
+        switch indexPath.section {
+        case 0:
+            guard let cell =
+                tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
+            cell.imageView?.image = UIImage(named: "icons8-example-500")
+            cell.textLabel?.text = "Today's Weather"
+            cell.detailTextLabel?.text = "Number"
+            cell.layer.cornerRadius = 10.0
+            return cell
+        default:
+            guard let cell =
+                tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
+            cell.textLabel?.text = "hola hola hola"
+            cell.layer.cornerRadius = 10.0
+            return cell
+        }
+   
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
