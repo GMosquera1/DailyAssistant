@@ -14,7 +14,7 @@ import MapKit
 class OverviewController: UIViewController {
     
     public var cityName = ""
-    
+    var alert: UIAlertController!
     public var forecast = [Periods](){
         didSet {
             DispatchQueue.main.async {
@@ -49,6 +49,19 @@ class OverviewController: UIViewController {
         }
         overView.weatherCV.dataSource = self
         overView.weatherCV.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
+        alert = UIAlertController() 
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter ZipCode"
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            self.alert.addAction(ok)
+        }
+        showAlert(title:  "Enter Zipcode" , message: "Please enter zipcode", style: .alert) { (alert) in
+            
+      
+        }
+        // create UI Alert with an action called showalert or
     }
     
     func setUp() {
@@ -177,7 +190,7 @@ extension OverviewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as? WeatherCollectionViewCell else { return UICollectionViewCell() }
         let day = forecast[indexPath.row]
-        cell.weatherImage.image = UIImage(named: day.icon ?? "AppIcon")
+        cell.weatherImage.image = UIImage(named: "stars")
         cell.weatherDay.text = "\(day.dateFormattedTime.first)"
         cell.weatherHigh.text = "High: \(day.maxTempF)°F"
         cell.weatherLow.text = "Low: \(day.minTempF)°F"

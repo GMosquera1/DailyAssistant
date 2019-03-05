@@ -15,7 +15,7 @@ class Overview: UIView {
         layout.itemSize = CGSize.init(width: 300, height: 275)
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        let cv = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
         cv.backgroundColor = UIColor.clear
         cv.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
         return cv
@@ -23,7 +23,7 @@ class Overview: UIView {
     
     
     public lazy var toDoTableView: UITableView = {
-             let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
         let displayWidth: CGFloat = self.frame.width
         let displayHeight: CGFloat = self.frame.height
         var tv = UITableView()
@@ -34,7 +34,7 @@ class Overview: UIView {
         tv = UITableView(frame: .init(x: 25, y: 25, width: 25, height: 25) , style: .grouped)
         //        tv.delegate = self
         //        tv.dataSource = self
-           tv.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tv.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tv.layer.cornerRadius = 10.0
         //    toDoTableView.reloadData()
         return tv
@@ -52,15 +52,16 @@ class Overview: UIView {
     }
     
     func setConstraints(){
-        addSubview(toDoTableView)
+        
         addSubview(weatherCV)
+        addSubview(toDoTableView)
         
         toDoTableView.translatesAutoresizingMaskIntoConstraints = false
         weatherCV.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([weatherCV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),weatherCV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), weatherCV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),weatherCV.bottomAnchor.constraint(equalTo: toDoTableView.topAnchor, constant: 11)])
+        NSLayoutConstraint.activate([weatherCV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 0),weatherCV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), weatherCV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),weatherCV.heightAnchor.constraint(equalToConstant: 350)])
         
-        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: topAnchor, constant: 270), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 22)])
+        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: weatherCV.bottomAnchor), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)])
     }
     
 }

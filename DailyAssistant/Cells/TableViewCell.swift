@@ -118,17 +118,8 @@ class TableViewCell: UITableViewCell {
         eventImageView.translatesAutoresizingMaskIntoConstraints = false
         eventTitle.translatesAutoresizingMaskIntoConstraints = false
         eventAddress.translatesAutoresizingMaskIntoConstraints = false
-        
-        weatherImage.translatesAutoresizingMaskIntoConstraints = false
-        
-        weatherDay.translatesAutoresizingMaskIntoConstraints = false
-        
-        weatherHigh.translatesAutoresizingMaskIntoConstraints = false
-        
-        weatherLow.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([ containerView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor), containerView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 10), containerView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -10), containerView.heightAnchor.constraint(equalToConstant: 40), eventTitle.topAnchor.constraint(equalTo: self.containerView.topAnchor), eventTitle.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), eventTitle.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor),
-                                      eventAddress.topAnchor.constraint(equalTo: self.eventTitle.bottomAnchor), eventAddress.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), eventAddress.topAnchor.constraint(equalTo: self.eventTitle.bottomAnchor), eventAddress.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), eventImageView.widthAnchor.constraint(equalToConstant: 26), eventImageView.heightAnchor.constraint(equalToConstant: 26), eventImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20), eventImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor), weatherDay.topAnchor.constraint(equalTo: self.containerView.topAnchor), weatherDay.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), weatherDay.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor),weatherHigh.topAnchor.constraint(equalTo: weatherDay.bottomAnchor), weatherHigh.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), weatherHigh.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor) , weatherLow.topAnchor.constraint(equalTo: weatherHigh.bottomAnchor),weatherLow.trailingAnchor.constraint(equalTo: self.containerView.trailingAnchor), weatherLow.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), weatherLow.bottomAnchor.constraint(equalTo: self.containerView.bottomAnchor)
+                                      eventAddress.topAnchor.constraint(equalTo: self.eventTitle.bottomAnchor), eventAddress.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), eventAddress.topAnchor.constraint(equalTo: self.eventTitle.bottomAnchor), eventAddress.leadingAnchor.constraint(equalTo: self.containerView.leadingAnchor), eventImageView.widthAnchor.constraint(equalToConstant: 26), eventImageView.heightAnchor.constraint(equalToConstant: 26), eventImageView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20), eventImageView.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor)
             
                                       ])
 

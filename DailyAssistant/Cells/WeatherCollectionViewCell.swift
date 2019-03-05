@@ -13,7 +13,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     public lazy var weatherImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 35
         imageView.clipsToBounds = true
         imageView.image = UIImage.init(named: "icons8-example-500")
@@ -24,7 +23,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         label.text = "Day of Week"
         return label
@@ -34,7 +32,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         label.text = "high weather"
         return label
@@ -44,15 +41,21 @@ class WeatherCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 20)
         label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
         label.text = "low weather"
         return label
     }()
     
+    
     override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = .yellow 
+        super.init(frame: UIScreen.main.bounds)
+        backgroundColor = .yellow
+        addSubview(weatherDay)
+        addSubview(weatherImage)
+        addSubview(weatherHigh)
+        addSubview(weatherLow)
+        setUpView()
+        
     }
     
     
@@ -61,9 +64,21 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     }
     
     func setUpView(){
+        
+        
         weatherDay.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([ weatherDay.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor), weatherDay.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12), weatherDay.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12), weatherDay.bottomAnchor.constraint(equalTo: bottomAnchor)
+        weatherImage.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        weatherHigh.translatesAutoresizingMaskIntoConstraints = false
+        
+        weatherLow.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint.activate([ weatherDay.topAnchor.constraint(equalTo: self.topAnchor, constant: 11), weatherDay.leadingAnchor.constraint(equalTo: self.leadingAnchor), weatherDay.trailingAnchor.constraint(equalTo: self.trailingAnchor),weatherDay.centerXAnchor.constraint(equalTo: self.centerXAnchor), weatherImage.topAnchor.constraint(equalTo: weatherDay.bottomAnchor, constant: 11), weatherImage.leadingAnchor.constraint(equalTo: self.leadingAnchor), weatherImage.widthAnchor.constraint(equalToConstant: 100), weatherImage.heightAnchor.constraint(equalToConstant: 100),
+                                      weatherHigh.centerYAnchor.constraint(equalTo: weatherImage.centerYAnchor, constant: -20), weatherHigh.leadingAnchor.constraint(equalTo: weatherImage.trailingAnchor, constant: 12), weatherHigh.trailingAnchor.constraint(equalTo: self.trailingAnchor), weatherLow.centerXAnchor.constraint(equalTo: weatherHigh.centerXAnchor),
+                                      weatherLow.widthAnchor.constraint(equalTo: weatherHigh.widthAnchor), weatherLow.heightAnchor.constraint(equalTo: weatherHigh.heightAnchor), weatherLow.topAnchor.constraint(equalTo: weatherHigh.bottomAnchor, constant: 11)
             ])
     }
     
