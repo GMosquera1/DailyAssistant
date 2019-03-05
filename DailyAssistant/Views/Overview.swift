@@ -15,6 +15,10 @@ class Overview: UIView {
         let displayWidth: CGFloat = self.frame.width
         let displayHeight: CGFloat = self.frame.height
         var tv = UITableView()
+        tv.separatorColor = .yellow
+        tv.sectionIndexBackgroundColor = .yellow
+        tv.sectionIndexColor = .blue
+        tv.backgroundColor = UIColor.clear
         tv = UITableView(frame: .init(x: 25, y: 25, width: 25, height: 25) , style: .grouped)
         //        tv.delegate = self
         //        tv.dataSource = self

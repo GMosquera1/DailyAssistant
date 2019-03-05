@@ -60,13 +60,13 @@ class ToDoView: UIView {
         sender.setTitle("Event Added", for: .normal)
         sender.setTitleColor(.white, for: .normal)
         let eventStore: EKEventStore = EKEventStore()
-        
+
         eventStore.requestAccess(to: .event) {(granted, error) in
             if (granted) && (error == nil)
             {
                 print("granted \(granted)")
                 print("error \(error)")
-                
+
                 let event:EKEvent = EKEvent(eventStore: eventStore)
                 DispatchQueue.main.async {
                  event.title = self.titleTextField.text
@@ -81,16 +81,16 @@ class ToDoView: UIView {
                     print("error: \(error)")
                 }
                 print("Save Event")
-                
+
             } else {
                 print("error: \(error)")
-                
+
             }
-            
+
         }
         print("pressed")
     }
-    
+//
     override init(frame: CGRect){ super.init(frame: UIScreen.main.bounds)
         commonInit()
     }
