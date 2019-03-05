@@ -49,7 +49,7 @@ class OverviewController: UIViewController {
         }
         overView.weatherCV.dataSource = self
         overView.weatherCV.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
-        alert = UIAlertController() 
+        alert = UIAlertController(title: "Enter", message: "Enter Zip Code", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter ZipCode"
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
@@ -57,10 +57,11 @@ class OverviewController: UIViewController {
             })
             self.alert.addAction(ok)
         }
-        showAlert(title:  "Enter Zipcode" , message: "Please enter zipcode", style: .alert) { (alert) in
-            
-      
-        }
+        present(alert, animated: true, completion: nil)
+//        showAlert(title:  "Enter Zipcode" , message: "Please enter zipcode", style: .alert) { (alert) in
+//            
+//      
+//        }
         // create UI Alert with an action called showalert or
     }
     
