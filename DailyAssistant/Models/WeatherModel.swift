@@ -27,13 +27,15 @@ struct Periods: Codable {
         var formattedDate = validTime
         if let date = isoDateFormatter.date(from: validTime){
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM d, yyyy hh:mm a"
+            dateFormatter.dateFormat = "MMMM d, yyyy"
             formattedDate = dateFormatter.string(from: date)
         }
         return formattedDate
     }
     let maxTempF: Int
+    let maxTempC: Int 
     let minTempF: Int
+    let minTempC: Int 
     let avgTempF: Int
     let sunrise: Double
     let sunriseISO: String

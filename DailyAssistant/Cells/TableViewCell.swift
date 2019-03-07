@@ -55,47 +55,6 @@ class TableViewCell: UITableViewCell {
         faveAddress.text = "RESTAURANT'S ADDRESS GOES HERE"
         return faveAddress
     }()
-    
-    public lazy var weatherImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.layer.cornerRadius = 35
-        imageView.clipsToBounds = true
-        imageView.image = UIImage.init(named: "icons8-example-500")
-        return imageView
-    }()
-    
-    public lazy var weatherDay: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        label.text = "Day of Week"
-        return label
-    }()
-    
-    public lazy var weatherHigh: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        label.text = "high weather"
-        return label
-    }()
-    
-    public lazy var weatherLow: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = #colorLiteral(red: 0.1764705926, green: 0.01176470611, blue: 0.5607843399, alpha: 1)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
-        label.text = "low weather"
-        return label
-    }()
-    
 
     public lazy var containerView: UIView = {
         let view = UIView()

@@ -10,6 +10,7 @@
 		05080BAE222ED385001ACBF2 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */; };
 		05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */; };
 		05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */; };
+		05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BB32231A82F001ACBF2 /* ZipCodeHelper.swift */; };
 		0586C2252212215E0095C3AF /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C2242212215E0095C3AF /* ToDoView.swift */; };
 		0586C22722122A740095C3AF /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22622122A740095C3AF /* OverviewController.swift */; };
 		0586C22922122AB10095C3AF /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22822122AB10095C3AF /* Overview.swift */; };
@@ -40,6 +41,7 @@
 		05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
 		05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
+		05080BB32231A82F001ACBF2 /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
 		0586C2242212215E0095C3AF /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		0586C22622122A740095C3AF /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		0586C22822122AB10095C3AF /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				05B82DE7220CE6F800ED1508 /* NetworkHelper.swift */,
 				05B82DE5220CE69400ED1508 /* AppError.swift */,
 				05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */,
+				05080BB32231A82F001ACBF2 /* ZipCodeHelper.swift */,
 				05B82DED220CF48400ED1508 /* SecretKeys.swift */,
 				05E3CA41222631DD002579DC /* UserDefaultsKey.swift */,
 			);
@@ -260,6 +263,7 @@
 				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
 				05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */,
 				05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */,
+				05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */,
 				05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */,
 				0586C22922122AB10095C3AF /* Overview.swift in Sources */,
 				0586C2252212215E0095C3AF /* ToDoView.swift in Sources */,

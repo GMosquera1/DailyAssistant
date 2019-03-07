@@ -38,7 +38,7 @@ class OverviewController: UIViewController {
         overView.toDoTableView.backgroundColor = UIColor.clear
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .done, target: self, action: #selector(createNew))
         setUp()
-        WeatherAPIClient.searchWeather(zipcode: "11229", isZipcode: true) { (appError, periods) in
+        WeatherAPIClient.searchWeather(zipcode: "10014", isZipcode: true) { (appError, periods) in
             if let error = appError {
                 print(error.errorMessage())
             }
@@ -49,9 +49,9 @@ class OverviewController: UIViewController {
         }
         overView.weatherCV.dataSource = self
         overView.weatherCV.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
-        alert = UIAlertController(title: "Enter", message: "Enter Zip Code", preferredStyle: .alert)
+        alert = UIAlertController(title: "Enter", message: "Name of Current City", preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Enter ZipCode"
+            textField.placeholder = "Enter Zip Code"
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
                 self.dismiss(animated: true, completion: nil)
             })
@@ -114,17 +114,12 @@ extension OverviewController: UITableViewDataSource {
         case 0:
             guard let cell =
                 tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
-             let day = forecast.first
-            
-//            cell.imageView?.image = UIImage(named: "icons8-example-500")
-//            cell.textLabel?.text = "Today's Weather"
-//            cell.detailTextLabel?.text = "Number"
-//            cell.textLabel?.textColor = .white
+         //    let day = forecast.first
+
             cell.backgroundColor = UIColor.clear
             cell.layer.cornerRadius = 10.0
             if cell.isSelected == true {
                 cell.backgroundColor = .white
-       //        cell.textLabel?.textColor = .blue
             } else {
                 cell.backgroundColor = UIColor.clear 
             }
@@ -136,7 +131,7 @@ extension OverviewController: UITableViewDataSource {
             cell.textLabel?.text = "hola hola hola"
             cell.textLabel?.textColor = .white
             cell.layer.backgroundColor = UIColor.clear.cgColor
-            cell.backgroundColor = .red //UIColor.clear
+            cell.backgroundColor = UIColor.clear
             cell.layer.cornerRadius = 10.0
             return cell
         }
@@ -144,12 +139,11 @@ extension OverviewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //let weather = Weather()
         switch section {
         case 0:
-            return 0
-        case 1:
             return 4
+        case 1:
+            return 2
         case 2:
             return 2
         default:
@@ -165,14 +159,14 @@ extension OverviewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let arrTitles = ["Weather", "To-Do", "Events"]
+        let arrTitles = ["Birthdays", "Events","To-Do"]
         return arrTitles[section]
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         switch indexPath.section {
         case 0:
-            return 200
+            return 35
         case 1:
             return 35
         case 2:
@@ -191,15 +185,13 @@ extension OverviewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as? WeatherCollectionViewCell else { return UICollectionViewCell() }
         let day = forecast[indexPath.row]
-        cell.weatherImage.image = UIImage(named: "stars")
-        cell.weatherDay.text = "\(day.dateFormattedTime.first)"
-        cell.weatherHigh.text = "High: \(day.maxTempF)°F"
-        cell.weatherLow.text = "Low: \(day.minTempF)°F"
+        cell.weatherCity.text = "Welcome to "
+        cell.weatherImage.image = UIImage(named: day.icon)
+        cell.weatherDay.text = "\(day.dateFormattedTime)"
+        cell.weatherHigh.text = "H: \(day.maxTempF)°F/ \(day.maxTempC)°C"
+        cell.weatherLow.text = "L: \(day.minTempF)°F/ \(day.minTempC)°C"
         return cell
     }
-    
-    
-
     
 }
 
