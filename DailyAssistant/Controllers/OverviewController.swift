@@ -36,7 +36,7 @@ class OverviewController: UIViewController {
         overView.toDoTableView.dataSource = self
         overView.toDoTableView.delegate = self
         overView.toDoTableView.backgroundColor = UIColor.clear
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .done, target: self, action: #selector(createNew))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .done, target: self, action: #selector(newVC))
         setUp()
         WeatherAPIClient.searchWeather(zipcode: "10014", isZipcode: true) { (appError, periods) in
             if let error = appError {
@@ -68,44 +68,16 @@ class OverviewController: UIViewController {
     func setUp() {
         navigationItem.title = "Today's Events"
         navigationController?.navigationBar.barTintColor = UIColor.clear
-        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor:#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)]
         
     }
     
-    @objc private func createNew() {
-        //        let eventStore: EKEventStore = EKEventStore()
-        //
-        //        eventStore.requestAccess(to: .event) {(granted, error) in
-        //            if (granted) && (error == nil)
-        //            {
-        //                print("granted \(granted)")
-        //                print("error \(error)")
-        //
-        //                let event:EKEvent = EKEvent(eventStore: eventStore)
-        //                DispatchQueue.main.async {
-        //                    event.title = self.titleTextField.text
-        //                }
-        //                event.startDate = Date()
-        //                event.endDate = Date()
-        //                event.notes = "This is a note"
-        //                event.calendar = eventStore.defaultCalendarForNewEvents
-        //                do {
-        //                    try eventStore.save(event, span: .thisEvent)
-        //                } catch let error as NSError{
-        //                    print("error: \(error)")
-        //                }
-        //                print("Save Event")
-        //
-        //            } else {
-        //                print("error: \(error)")
-        //
-        //            }
-        //
-        //        }
-        //        print("pressed")
-        //    }
-        //  shouldPerformSegue(withIdentifier: "toDoVC", sender: self)
+    @objc private func newVC(button: UIBarButtonItem) -> Void {
+        button.isEnabled = true
+        var toDoViewController = ToDoViewController()
+        //present(toDoViewController, animated: true, completion: nil)
+        navigationController?.pushViewController(toDoViewController, animated: true)
     }
 }
 extension OverviewController: UITableViewDataSource {

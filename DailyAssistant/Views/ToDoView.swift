@@ -44,7 +44,6 @@ class ToDoView: UIView {
         textField.font = UIFont.systemFont(ofSize: 22, weight: UIFont.Weight.bold)
         return textField
     }()
-
     
     public lazy var addEventButton: UIButton = {
         let addButton = UIButton()
@@ -93,6 +92,7 @@ class ToDoView: UIView {
 //
     override init(frame: CGRect){ super.init(frame: UIScreen.main.bounds)
         commonInit()
+        self.backgroundColor = .white
     }
     
     required init?(coder aDecoder: NSCoder) {
