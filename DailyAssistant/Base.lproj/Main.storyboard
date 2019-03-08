@@ -42,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="1748" y="-223"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Main Tab Bar-->
         <scene sceneID="KjY-rG-J55">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="opZ-jT-UH7" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBar" automaticallyAdjustsScrollViewInsets="NO" id="opZ-jT-UH7" customClass="MainTabBar" customModule="DailyAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Odz-1f-HEb">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -94,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muH-9d-fsc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748" y="1281"/>
+            <point key="canvasLocation" x="2241" y="609"/>
         </scene>
         <!--Nearby Events-->
         <scene sceneID="kzd-Yb-AQ9">
@@ -113,7 +113,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GJ9-ur-yxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="865" y="1281"/>
+            <point key="canvasLocation" x="1220" y="609"/>
         </scene>
     </scenes>
     <resources>

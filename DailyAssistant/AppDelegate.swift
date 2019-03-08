@@ -7,24 +7,25 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var usersession: UserSession!
+    var storageManager: StorageManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
+        usersession = UserSession()
+        storageManager = StorageManager()
         // Override point for customization after application launch.
 //        
-//        window = UIWindow()
+       window = UIWindow(frame: UIScreen.main.bounds)
 //        window?.makeKeyAndVisible()
-//        
-//        //let agendaCollectionViewController = UIViewController()
-//        //agendaCollectionViewController.view.backgroundColor = .purple
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        let agendaCollectionViewController = AgendaCollectionViewController(collectionViewLayout: layout)
-//
+
 //        window?.rootViewController = agendaCollectionViewController
       return true
     }

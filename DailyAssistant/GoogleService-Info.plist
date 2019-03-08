@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>105527059379-rup5nshscor8fo0h8saf8ddg2v15i4d1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.105527059379-rup5nshscor8fo0h8saf8ddg2v15i4d1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBkARNFyY24L6yb6sNsqHun9P-ZvNe_KDA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>105527059379</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.genceci.DailyAssistant</string>
+	<key>PROJECT_ID</key>
+	<string>dailyassistant-e1f63</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dailyassistant-e1f63.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:105527059379:ios:266d009910e04288</string>
+	<key>DATABASE_URL</key>
+	<string>https://dailyassistant-e1f63.firebaseio.com</string>
+</dict>
+</plist>

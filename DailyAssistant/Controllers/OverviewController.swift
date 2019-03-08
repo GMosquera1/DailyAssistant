@@ -75,8 +75,8 @@ class OverviewController: UIViewController {
     
     @objc private func newVC(button: UIBarButtonItem) -> Void {
         button.isEnabled = true
-        var toDoViewController = ToDoViewController()
-        navigationController?.pushViewController(toDoViewController, animated: true)
+       let test = EventPagesViewController.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
+        navigationController?.pushViewController(test, animated: true)
     }
 }
 extension OverviewController: UITableViewDataSource {

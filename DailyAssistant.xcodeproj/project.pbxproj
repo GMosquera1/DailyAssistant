@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05080BAE222ED385001ACBF2 /* WeatherDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */; };
+		05080BAE222ED385001ACBF2 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAD222ED385001ACBF2 /* ToDoListViewController.swift */; };
 		05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */; };
 		05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */; };
 		05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05080BB32231A82F001ACBF2 /* ZipCodeHelper.swift */; };
@@ -15,11 +15,22 @@
 		0586C22722122A740095C3AF /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22622122A740095C3AF /* OverviewController.swift */; };
 		0586C22922122AB10095C3AF /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22822122AB10095C3AF /* Overview.swift */; };
 		0586C24A221399050095C3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C249221399050095C3AF /* TableViewCell.swift */; };
-		059D5B452231D2CD00C3BD14 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B442231D2CD00C3BD14 /* ToDos.swift */; };
-		059D5B472231D2FA00C3BD14 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B462231D2FA00C3BD14 /* Item.swift */; };
+		059D5B452231D2CD00C3BD14 /* ToDosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B442231D2CD00C3BD14 /* ToDosModel.swift */; };
+		059D5B472231D2FA00C3BD14 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B462231D2FA00C3BD14 /* ToDo.swift */; };
 		059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */; };
 		059D5B4E223214E500C3BD14 /* EventPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */; };
 		059D5B5022322FD500C3BD14 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */; };
+		059EFA692232C3A600FC59DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA682232C3A600FC59DD /* LoginViewController.swift */; };
+		059EFA6B2232C88900FC59DD /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA6A2232C88900FC59DD /* ToDoListView.swift */; };
+		059EFA6D2232C8CE00FC59DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA6C2232C8CE00FC59DD /* ListTableViewCell.swift */; };
+		059EFA6F223314C400FC59DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 059EFA6E223314C400FC59DD /* GoogleService-Info.plist */; };
+		059EFA71223317F200FC59DD /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */; };
+		059EFA7322331F5B00FC59DD /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7222331F5B00FC59DD /* UserSession.swift */; };
+		059EFA7522331F9800FC59DD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7422331F9800FC59DD /* StoreManager.swift */; };
+		059EFA782233232800FC59DD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA772233232800FC59DD /* LoginView.swift */; };
+		059EFA7A2233259000FC59DD /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA792233259000FC59DD /* MainTabBar.swift */; };
+		059EFA7C2233266900FC59DD /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7B2233266900FC59DD /* StorageKeys.swift */; };
+		059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7D2233268E00FC59DD /* DatabaseManager.swift */; };
 		05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7E1072217813D00B299F7 /* EventsModel.swift */; };
 		05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D90220B5C7400ED1508 /* AppDelegate.swift */; };
 		05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D92220B5C7400ED1508 /* ToDoViewController.swift */; };
@@ -40,10 +51,11 @@
 		05E3CA42222631DD002579DC /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA41222631DD002579DC /* UserDefaultsKey.swift */; };
 		05E3CA6722283F42002579DC /* AgendaCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */; };
 		05E3CA6922283F8F002579DC /* AgendaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3CA6822283F8F002579DC /* AgendaCollectionViewCell.swift */; };
+		A3AEB3031BEDBF37BD4AB925 /* Pods_DailyAssistant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F276EF3AE9F9FED7EE1D713 /* Pods_DailyAssistant.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailsViewController.swift; sourceTree = "<group>"; };
+		05080BAD222ED385001ACBF2 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alerts.swift"; sourceTree = "<group>"; };
 		05080BB32231A82F001ACBF2 /* ZipCodeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeHelper.swift; sourceTree = "<group>"; };
@@ -51,11 +63,22 @@
 		0586C22622122A740095C3AF /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		0586C22822122AB10095C3AF /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		0586C249221399050095C3AF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		059D5B442231D2CD00C3BD14 /* ToDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDos.swift; sourceTree = "<group>"; };
-		059D5B462231D2FA00C3BD14 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		059D5B442231D2CD00C3BD14 /* ToDosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosModel.swift; sourceTree = "<group>"; };
+		059D5B462231D2FA00C3BD14 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPagesViewController.swift; sourceTree = "<group>"; };
 		059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
+		059EFA682232C3A600FC59DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		059EFA6A2232C88900FC59DD /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
+		059EFA6C2232C8CE00FC59DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		059EFA6E223314C400FC59DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
+		059EFA7222331F5B00FC59DD /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		059EFA7422331F9800FC59DD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		059EFA772233232800FC59DD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		059EFA792233259000FC59DD /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		059EFA7B2233266900FC59DD /* StorageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
+		059EFA7D2233268E00FC59DD /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		05B7E1072217813D00B299F7 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		05B82D8D220B5C7400ED1508 /* DailyAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B82D90220B5C7400ED1508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +101,9 @@
 		05E3CA41222631DD002579DC /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaCollectionViewController.swift; sourceTree = "<group>"; };
 		05E3CA6822283F8F002579DC /* AgendaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaCollectionViewCell.swift; sourceTree = "<group>"; };
+		07380E842D67E4A62A4317FB /* Pods-DailyAssistant.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyAssistant.release.xcconfig"; path = "Target Support Files/Pods-DailyAssistant/Pods-DailyAssistant.release.xcconfig"; sourceTree = "<group>"; };
+		1F276EF3AE9F9FED7EE1D713 /* Pods_DailyAssistant.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DailyAssistant.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C405DB052A572371F5A107F0 /* Pods-DailyAssistant.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DailyAssistant.debug.xcconfig"; path = "Target Support Files/Pods-DailyAssistant/Pods-DailyAssistant.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3AEB3031BEDBF37BD4AB925 /* Pods_DailyAssistant.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +121,21 @@
 		059D5B4A2231D37900C3BD14 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
-				059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */,
+				059EFA7B2233266900FC59DD /* StorageKeys.swift */,
+				059EFA7D2233268E00FC59DD /* DatabaseManager.swift */,
 				059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */,
 			);
 			path = FileManager;
+			sourceTree = "<group>";
+		};
+		059EFA7622331FB600FC59DD /* Firebase Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */,
+				059EFA7222331F5B00FC59DD /* UserSession.swift */,
+				059EFA7422331F9800FC59DD /* StoreManager.swift */,
+			);
+			path = "Firebase Utilities";
 			sourceTree = "<group>";
 		};
 		05B82D84220B5C7400ED1508 = {
@@ -105,6 +143,8 @@
 			children = (
 				05B82D8F220B5C7400ED1508 /* DailyAssistant */,
 				05B82D8E220B5C7400ED1508 /* Products */,
+				E0598383F4B70E96DE5E25A3 /* Pods */,
+				9015E9D6322BBA2FB0FF61AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +159,7 @@
 		05B82D8F220B5C7400ED1508 /* DailyAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				059EFA7622331FB600FC59DD /* Firebase Utilities */,
 				059D5B4A2231D37900C3BD14 /* FileManager */,
 				05B82DE4220CE5E500ED1508 /* Network Services */,
 				05B82D90220B5C7400ED1508 /* AppDelegate.swift */,
@@ -126,10 +167,12 @@
 				05E3CA6422283CC7002579DC /* Views */,
 				05B82DE1220CE52E00ED1508 /* Controllers */,
 				05B82D94220B5C7400ED1508 /* Main.storyboard */,
+				059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */,
 				05B82DE0220CE52300ED1508 /* Models */,
 				05B82D97220B5C7500ED1508 /* Assets.xcassets */,
 				05B82D99220B5C7500ED1508 /* LaunchScreen.storyboard */,
 				05B82D9C220B5C7500ED1508 /* Info.plist */,
+				059EFA6E223314C400FC59DD /* GoogleService-Info.plist */,
 			);
 			path = DailyAssistant;
 			sourceTree = "<group>";
@@ -140,8 +183,8 @@
 				05B82DDE220CE51B00ED1508 /* EventbriteModel.swift */,
 				05B7E1072217813D00B299F7 /* EventsModel.swift */,
 				05B82DEB220CF41700ED1508 /* WeatherModel.swift */,
-				059D5B442231D2CD00C3BD14 /* ToDos.swift */,
-				059D5B462231D2FA00C3BD14 /* Item.swift */,
+				059D5B442231D2CD00C3BD14 /* ToDosModel.swift */,
+				059D5B462231D2FA00C3BD14 /* ToDo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -150,8 +193,10 @@
 			isa = PBXGroup;
 			children = (
 				05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */,
+				059EFA792233259000FC59DD /* MainTabBar.swift */,
+				059EFA682232C3A600FC59DD /* LoginViewController.swift */,
 				0586C22622122A740095C3AF /* OverviewController.swift */,
-				05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */,
+				05080BAD222ED385001ACBF2 /* ToDoListViewController.swift */,
 				059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */,
 				05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */,
 				05B82D92220B5C7400ED1508 /* ToDoViewController.swift */,
@@ -180,7 +225,9 @@
 			children = (
 				0586C22822122AB10095C3AF /* Overview.swift */,
 				0586C2242212215E0095C3AF /* ToDoView.swift */,
+				059EFA6A2232C88900FC59DD /* ToDoListView.swift */,
 				05E3CA07221C8BD3002579DC /* NearbyView.swift */,
+				059EFA772233232800FC59DD /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -192,8 +239,26 @@
 				05E3CA6822283F8F002579DC /* AgendaCollectionViewCell.swift */,
 				0586C249221399050095C3AF /* TableViewCell.swift */,
 				05080BAF222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift */,
+				059EFA6C2232C8CE00FC59DD /* ListTableViewCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		9015E9D6322BBA2FB0FF61AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F276EF3AE9F9FED7EE1D713 /* Pods_DailyAssistant.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0598383F4B70E96DE5E25A3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C405DB052A572371F5A107F0 /* Pods-DailyAssistant.debug.xcconfig */,
+				07380E842D67E4A62A4317FB /* Pods-DailyAssistant.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,9 +268,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05B82D9F220B5C7500ED1508 /* Build configuration list for PBXNativeTarget "DailyAssistant" */;
 			buildPhases = (
+				38550AF5DD7F3FC01E0DDD36 /* [CP] Check Pods Manifest.lock */,
 				05B82D89220B5C7400ED1508 /* Sources */,
 				05B82D8A220B5C7400ED1508 /* Frameworks */,
 				05B82D8B220B5C7400ED1508 /* Resources */,
+				9E9CA93F7F385B56074ACFD7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,43 +322,115 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B82D9B220B5C7500ED1508 /* LaunchScreen.storyboard in Resources */,
+				059EFA71223317F200FC59DD /* LoginStoryboard.storyboard in Resources */,
 				05B82D98220B5C7500ED1508 /* Assets.xcassets in Resources */,
 				05B82D96220B5C7400ED1508 /* Main.storyboard in Resources */,
+				059EFA6F223314C400FC59DD /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38550AF5DD7F3FC01E0DDD36 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DailyAssistant-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E9CA93F7F385B56074ACFD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DailyAssistant/Pods-DailyAssistant-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DailyAssistant/Pods-DailyAssistant-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05B82D89220B5C7400ED1508 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05080BAE222ED385001ACBF2 /* WeatherDetailsViewController.swift in Sources */,
+				05080BAE222ED385001ACBF2 /* ToDoListViewController.swift in Sources */,
 				05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */,
+				059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */,
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
 				05E3CA08221C8BD3002579DC /* NearbyView.swift in Sources */,
 				0586C22722122A740095C3AF /* OverviewController.swift in Sources */,
 				05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */,
 				05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */,
+				059EFA7C2233266900FC59DD /* StorageKeys.swift in Sources */,
 				05E3CA6722283F42002579DC /* AgendaCollectionViewController.swift in Sources */,
 				05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */,
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
-				059D5B472231D2FA00C3BD14 /* Item.swift in Sources */,
+				059D5B472231D2FA00C3BD14 /* ToDo.swift in Sources */,
+				059EFA6D2232C8CE00FC59DD /* ListTableViewCell.swift in Sources */,
 				05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */,
-				059D5B452231D2CD00C3BD14 /* ToDos.swift in Sources */,
+				059D5B452231D2CD00C3BD14 /* ToDosModel.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
+				059EFA692232C3A600FC59DD /* LoginViewController.swift in Sources */,
 				05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */,
 				05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */,
+				059EFA7A2233259000FC59DD /* MainTabBar.swift in Sources */,
 				059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */,
 				05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */,
 				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
+				059EFA7522331F9800FC59DD /* StoreManager.swift in Sources */,
 				059D5B4E223214E500C3BD14 /* EventPagesViewController.swift in Sources */,
 				05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */,
 				059D5B5022322FD500C3BD14 /* UserDefaultsKeys.swift in Sources */,
+				059EFA7322331F5B00FC59DD /* UserSession.swift in Sources */,
 				05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */,
 				05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */,
+				059EFA6B2232C88900FC59DD /* ToDoListView.swift in Sources */,
+				059EFA782233232800FC59DD /* LoginView.swift in Sources */,
 				05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */,
 				0586C22922122AB10095C3AF /* Overview.swift in Sources */,
 				0586C2252212215E0095C3AF /* ToDoView.swift in Sources */,
@@ -440,6 +579,7 @@
 		};
 		05B82DA0220B5C7500ED1508 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C405DB052A572371F5A107F0 /* Pods-DailyAssistant.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,6 +598,7 @@
 		};
 		05B82DA1220B5C7500ED1508 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 07380E842D67E4A62A4317FB /* Pods-DailyAssistant.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

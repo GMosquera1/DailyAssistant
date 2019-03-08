@@ -9,30 +9,47 @@
 import UIKit
 
 class EventPagesViewController: UIPageViewController, UIPageViewControllerDelegate {
+   
+    
     
     var pages = [UIViewController]()
     let pageControl = UIPageControl()
+    let tDView = ToDoView()
+    let tDListView = ToDoListView()
     
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-        let initialPage = 1
-        let page1 = WeatherDetailsViewController()
-        let page2 = NearbyViewController()
-        
-        self.pages.append(page1)
-        self.pages.append(page2)
-        setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
-        
-        self.pageControl.frame = CGRect()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.delegate = self
+        self.dataSource = self
+        let initialPage = 0
+        let page1 = ToDoListViewController()
+        let page2 = ToDoViewController()
+        
+        self.pages.append(page1)
+        self.pages.append(page2)
+ setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
+        
+        self.pageControl.frame = CGRect()
         setupUI()
         arrangeSubviews()
     }
+    
+//    override func viewDidLayoutSubviews() {
+//        for subView in self.view.subviews as! [UIView] {
+//            if subView is UIScrollView {
+//                subView.frame = self.view.bounds
+//            } else if subView is UIPageControl {
+//                self.view.bringSubviewToFront(tDListView)
+//            }
+//        }
+//        super.viewDidLayoutSubviews()
+//    }
 //    override init(transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [String : Any]? = nil) {
 //        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
 //    }
@@ -40,15 +57,11 @@ class EventPagesViewController: UIPageViewController, UIPageViewControllerDelega
 //        self.introRouter = introRouter
 //    }
 //
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    
 }
 
-private extension EventPagesViewController {
-    
-    func IntroViewController(_ IntroViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        
+extension EventPagesViewController: UIPageViewControllerDataSource {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let viewControllerIndex = self.pages.index(of: viewController) {
             if viewControllerIndex == 0 {
                 // wrap to last page in array
@@ -61,8 +74,7 @@ private extension EventPagesViewController {
         return nil
     }
     
-    func IntroViewController(_ IntroViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let viewControllerIndex = self.pages.index(of: viewController) {
             if viewControllerIndex < self.pages.count - 1 {
                 // go to next page in array
@@ -74,6 +86,7 @@ private extension EventPagesViewController {
         }
         return nil
     }
+    
     
     func IntroViewController(_ IntroViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         

@@ -9,5 +9,5 @@
 import Foundation
 
 struct UserDefaultsKeys {
-    static let DefaultSearchKey = "Default Search"
+    static let DefaultSearchKey = "usersMainTabBar"
 }
