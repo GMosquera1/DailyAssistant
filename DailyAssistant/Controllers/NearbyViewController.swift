@@ -45,7 +45,7 @@ class NearbyViewController: UIViewController {
     }
     
     private func searchEvents(keyword: String){
-        EventbriteAPIClient.getEvent(keyword: keyword) { (error, events) in
+        EventbriteAPIClient.getEvent(city: keyword, isZipcode: true) { (error, events) in
             if let error = error {
                 print("searching events error:\(error)")
             } else if let events = events {
