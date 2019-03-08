@@ -9,11 +9,22 @@
 import Foundation
 
 final class EventbriteAPIClient {
-    static func getEvent(keyword: String, completionHandler: @escaping(AppError?, [Event]?) -> Void) {
+    static func getEvent(city: String, isZipcode: Bool, completionHandler: @escaping(AppError?, [Event]?) -> Void) {
         // TO-DO = Check URL for search functionality
         // interpolate for location 
-        let URL = "https://www.eventbriteapi.com/v3/events/search?location.within=10km&expand=venue-H'Authorization:BearerPERSONAL_OAUTH_TOKEN'&location.address=vancovuer&token=HGCVIXQ3FJZNEZUHE4G2"
-        NetworkHelper.shared.performDataTask(endpointURLString: URL, httpMethod: "GET", httpBody: nil) { (appError, data) in
+       var endPointURL = ""
+        if isZipcode {
+            endPointURL = "https://www.eventbriteapi.com/v3/events/search?location.within=10km&expand=venue-H'Authorization:BearerPERSONAL_OAUTH_TOKEN'&location.address=\(city)&token=HGCVIXQ3FJZNEZUHE4G2"
+        } else {
+            guard let zipCode =
+            city.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
+                print("encoding city error: \(city)")
+                return
+            }
+            endPointURL = "https://www.eventbriteapi.com/v3/events/search?location.within=10km&expand=venue-H'Authorization:BearerPERSONAL_OAUTH_TOKEN'&location.address=\(zipCode)&token=HGCVIXQ3FJZNEZUHE4G2"
+        }
+        let URL =
+        NetworkHelper.shared.performDataTask(endpointURLString: endPointURL, httpMethod: "GET", httpBody: nil) { (appError, data) in
             if let error = appError {
                 completionHandler(error, nil)
             }

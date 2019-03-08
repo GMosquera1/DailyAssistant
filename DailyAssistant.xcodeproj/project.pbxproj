@@ -15,6 +15,11 @@
 		0586C22722122A740095C3AF /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22622122A740095C3AF /* OverviewController.swift */; };
 		0586C22922122AB10095C3AF /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22822122AB10095C3AF /* Overview.swift */; };
 		0586C24A221399050095C3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C249221399050095C3AF /* TableViewCell.swift */; };
+		059D5B452231D2CD00C3BD14 /* ToDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B442231D2CD00C3BD14 /* ToDos.swift */; };
+		059D5B472231D2FA00C3BD14 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B462231D2FA00C3BD14 /* Item.swift */; };
+		059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */; };
+		059D5B4E223214E500C3BD14 /* EventPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */; };
+		059D5B5022322FD500C3BD14 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */; };
 		05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7E1072217813D00B299F7 /* EventsModel.swift */; };
 		05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D90220B5C7400ED1508 /* AppDelegate.swift */; };
 		05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D92220B5C7400ED1508 /* ToDoViewController.swift */; };
@@ -46,6 +51,11 @@
 		0586C22622122A740095C3AF /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		0586C22822122AB10095C3AF /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		0586C249221399050095C3AF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		059D5B442231D2CD00C3BD14 /* ToDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDos.swift; sourceTree = "<group>"; };
+		059D5B462231D2FA00C3BD14 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
+		059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPagesViewController.swift; sourceTree = "<group>"; };
+		059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		05B7E1072217813D00B299F7 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		05B82D8D220B5C7400ED1508 /* DailyAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B82D90220B5C7400ED1508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		059D5B4A2231D37900C3BD14 /* FileManager */ = {
+			isa = PBXGroup;
+			children = (
+				059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */,
+				059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */,
+			);
+			path = FileManager;
+			sourceTree = "<group>";
+		};
 		05B82D84220B5C7400ED1508 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +119,7 @@
 		05B82D8F220B5C7400ED1508 /* DailyAssistant */ = {
 			isa = PBXGroup;
 			children = (
+				059D5B4A2231D37900C3BD14 /* FileManager */,
 				05B82DE4220CE5E500ED1508 /* Network Services */,
 				05B82D90220B5C7400ED1508 /* AppDelegate.swift */,
 				05E3CA6522283CE0002579DC /* Cells */,
@@ -120,6 +140,8 @@
 				05B82DDE220CE51B00ED1508 /* EventbriteModel.swift */,
 				05B7E1072217813D00B299F7 /* EventsModel.swift */,
 				05B82DEB220CF41700ED1508 /* WeatherModel.swift */,
+				059D5B442231D2CD00C3BD14 /* ToDos.swift */,
+				059D5B462231D2FA00C3BD14 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -130,6 +152,7 @@
 				05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */,
 				0586C22622122A740095C3AF /* OverviewController.swift */,
 				05080BAD222ED385001ACBF2 /* WeatherDetailsViewController.swift */,
+				059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */,
 				05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */,
 				05B82D92220B5C7400ED1508 /* ToDoViewController.swift */,
 				05E3CA09221C8BFA002579DC /* NearbyViewController.swift */,
@@ -254,14 +277,19 @@
 				05E3CA6722283F42002579DC /* AgendaCollectionViewController.swift in Sources */,
 				05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */,
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,
+				059D5B472231D2FA00C3BD14 /* Item.swift in Sources */,
 				05080BB0222ED3EA001ACBF2 /* WeatherCollectionViewCell.swift in Sources */,
+				059D5B452231D2CD00C3BD14 /* ToDos.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
 				05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */,
 				05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */,
+				059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */,
 				05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */,
 				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
+				059D5B4E223214E500C3BD14 /* EventPagesViewController.swift in Sources */,
 				05B82DEC220CF41700ED1508 /* WeatherModel.swift in Sources */,
+				059D5B5022322FD500C3BD14 /* UserDefaultsKeys.swift in Sources */,
 				05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */,
 				05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */,
 				05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */,

@@ -36,7 +36,7 @@ class OverviewController: UIViewController {
         overView.toDoTableView.dataSource = self
         overView.toDoTableView.delegate = self
         overView.toDoTableView.backgroundColor = UIColor.clear
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add Event", style: .done, target: self, action: #selector(newVC))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(newVC))
         setUp()
         WeatherAPIClient.searchWeather(zipcode: "10014", isZipcode: true) { (appError, periods) in
             if let error = appError {
@@ -76,7 +76,6 @@ class OverviewController: UIViewController {
     @objc private func newVC(button: UIBarButtonItem) -> Void {
         button.isEnabled = true
         var toDoViewController = ToDoViewController()
-        //present(toDoViewController, animated: true, completion: nil)
         navigationController?.pushViewController(toDoViewController, animated: true)
     }
 }
