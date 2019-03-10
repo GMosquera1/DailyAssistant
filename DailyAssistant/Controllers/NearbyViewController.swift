@@ -13,6 +13,7 @@ import CoreLocation
 class NearbyViewController: UIViewController {
     
     let nearbyView = NearbyView()
+    var alert: UIAlertController!
     private let locationManager = CLLocationManager()
     private var coordinatesToSearch = CLLocationCoordinate2D(latitude: 40.626994, longitude: -74.009727)
     private var events = [Event]() {
@@ -42,6 +43,15 @@ class NearbyViewController: UIViewController {
         locationManager.delegate = self
         nearbyView.searchBar.delegate = self
         searchEvents(keyword: "yoga")
+        alert = UIAlertController(title: "Enter", message: "Name of Current City", preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter Zip Code"
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                self.dismiss(animated: true, completion: nil)
+            })
+            self.alert.addAction(ok)
+        }
+        present(alert, animated: true, completion: nil)
     }
     
     private func searchEvents(keyword: String){
@@ -54,14 +64,14 @@ class NearbyViewController: UIViewController {
         }
     }
     
-//    fileprivate func addAnnotations() {
-//        nearbyView.mapView.removeAnnotation(annotations)
-//        annotations.removeAll()
-//        for event in events {
-//            let annotation = MKPointAnnotation()
-//            annotation.coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-//        }
-//    }
+    //    fileprivate func addAnnotations() {
+    //        nearbyView.mapView.removeAnnotation(annotations)
+    //        annotations.removeAll()
+    //        for event in events {
+    //            let annotation = MKPointAnnotation()
+    //            annotation.coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
+    //        }
+    //    }
     
     private func userDefaultSearchTerm() -> String {
         if let searchTermFromUserDefaults =
@@ -134,7 +144,7 @@ extension NearbyViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = eventInfo.name.text
         cell.detailTextLabel?.text = eventInfo.name.html
         return cell
-    
+        
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Nearby Events"
@@ -145,11 +155,11 @@ extension NearbyViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         guard let text = searchBar.text,
-        !text.isEmpty,
+            !text.isEmpty,
             let searchText = text.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else {
                 print("not valid")
                 return
         }
-    searchEvents(keyword: searchText)
+        searchEvents(keyword: searchText)
     }
 }

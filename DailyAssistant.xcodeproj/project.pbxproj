@@ -20,17 +20,16 @@
 		059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */; };
 		059D5B4E223214E500C3BD14 /* EventPagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */; };
 		059D5B5022322FD500C3BD14 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */; };
-		059EFA692232C3A600FC59DD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA682232C3A600FC59DD /* LoginViewController.swift */; };
 		059EFA6B2232C88900FC59DD /* ToDoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA6A2232C88900FC59DD /* ToDoListView.swift */; };
 		059EFA6D2232C8CE00FC59DD /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA6C2232C8CE00FC59DD /* ListTableViewCell.swift */; };
 		059EFA6F223314C400FC59DD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 059EFA6E223314C400FC59DD /* GoogleService-Info.plist */; };
-		059EFA71223317F200FC59DD /* LoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */; };
 		059EFA7322331F5B00FC59DD /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7222331F5B00FC59DD /* UserSession.swift */; };
 		059EFA7522331F9800FC59DD /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7422331F9800FC59DD /* StoreManager.swift */; };
-		059EFA782233232800FC59DD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA772233232800FC59DD /* LoginView.swift */; };
 		059EFA7A2233259000FC59DD /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA792233259000FC59DD /* MainTabBar.swift */; };
 		059EFA7C2233266900FC59DD /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7B2233266900FC59DD /* StorageKeys.swift */; };
 		059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7D2233268E00FC59DD /* DatabaseManager.swift */; };
+		059EFA80223378E600FC59DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7F223378E600FC59DD /* ProfileViewController.swift */; };
+		059EFA8222337DD400FC59DD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA8122337DD400FC59DD /* ImageCache.swift */; };
 		05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7E1072217813D00B299F7 /* EventsModel.swift */; };
 		05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D90220B5C7400ED1508 /* AppDelegate.swift */; };
 		05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D92220B5C7400ED1508 /* ToDoViewController.swift */; };
@@ -68,17 +67,16 @@
 		059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPagesViewController.swift; sourceTree = "<group>"; };
 		059D5B4F22322FD500C3BD14 /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
-		059EFA682232C3A600FC59DD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		059EFA6A2232C88900FC59DD /* ToDoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListView.swift; sourceTree = "<group>"; };
 		059EFA6C2232C8CE00FC59DD /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		059EFA6E223314C400FC59DD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginStoryboard.storyboard; sourceTree = "<group>"; };
 		059EFA7222331F5B00FC59DD /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		059EFA7422331F9800FC59DD /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
-		059EFA772233232800FC59DD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		059EFA792233259000FC59DD /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
 		059EFA7B2233266900FC59DD /* StorageKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		059EFA7D2233268E00FC59DD /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		059EFA7F223378E600FC59DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		059EFA8122337DD400FC59DD /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		05B7E1072217813D00B299F7 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		05B82D8D220B5C7400ED1508 /* DailyAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B82D90220B5C7400ED1508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				05E3CA6422283CC7002579DC /* Views */,
 				05B82DE1220CE52E00ED1508 /* Controllers */,
 				05B82D94220B5C7400ED1508 /* Main.storyboard */,
-				059EFA70223317F200FC59DD /* LoginStoryboard.storyboard */,
 				05B82DE0220CE52300ED1508 /* Models */,
 				05B82D97220B5C7500ED1508 /* Assets.xcassets */,
 				05B82D99220B5C7500ED1508 /* LaunchScreen.storyboard */,
@@ -194,11 +191,11 @@
 			children = (
 				05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */,
 				059EFA792233259000FC59DD /* MainTabBar.swift */,
-				059EFA682232C3A600FC59DD /* LoginViewController.swift */,
 				0586C22622122A740095C3AF /* OverviewController.swift */,
 				05080BAD222ED385001ACBF2 /* ToDoListViewController.swift */,
 				059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */,
 				05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */,
+				059EFA7F223378E600FC59DD /* ProfileViewController.swift */,
 				05B82D92220B5C7400ED1508 /* ToDoViewController.swift */,
 				05E3CA09221C8BFA002579DC /* NearbyViewController.swift */,
 				05E3CA3D2224910E002579DC /* NearbyEventsViewController.swift */,
@@ -210,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				05B82DE2220CE5E000ED1508 /* EventbriteAPIClient.swift */,
+				059EFA8122337DD400FC59DD /* ImageCache.swift */,
 				05B82DE7220CE6F800ED1508 /* NetworkHelper.swift */,
 				05B82DE5220CE69400ED1508 /* AppError.swift */,
 				05B82DE9220CF3C900ED1508 /* WeatherAPIClient.swift */,
@@ -227,7 +225,6 @@
 				0586C2242212215E0095C3AF /* ToDoView.swift */,
 				059EFA6A2232C88900FC59DD /* ToDoListView.swift */,
 				05E3CA07221C8BD3002579DC /* NearbyView.swift */,
-				059EFA772233232800FC59DD /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,7 +319,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				05B82D9B220B5C7500ED1508 /* LaunchScreen.storyboard in Resources */,
-				059EFA71223317F200FC59DD /* LoginStoryboard.storyboard in Resources */,
 				05B82D98220B5C7500ED1508 /* Assets.xcassets in Resources */,
 				05B82D96220B5C7400ED1508 /* Main.storyboard in Resources */,
 				059EFA6F223314C400FC59DD /* GoogleService-Info.plist in Resources */,
@@ -398,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05080BAE222ED385001ACBF2 /* ToDoListViewController.swift in Sources */,
+				059EFA8222337DD400FC59DD /* ImageCache.swift in Sources */,
 				05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */,
 				059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */,
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
@@ -415,10 +412,10 @@
 				059D5B452231D2CD00C3BD14 /* ToDosModel.swift in Sources */,
 				05B82DE6220CE69400ED1508 /* AppError.swift in Sources */,
 				05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */,
-				059EFA692232C3A600FC59DD /* LoginViewController.swift in Sources */,
 				05E3CA3E2224910E002579DC /* NearbyEventsViewController.swift in Sources */,
 				05B82DE8220CE6F800ED1508 /* NetworkHelper.swift in Sources */,
 				059EFA7A2233259000FC59DD /* MainTabBar.swift in Sources */,
+				059EFA80223378E600FC59DD /* ProfileViewController.swift in Sources */,
 				059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */,
 				05B82DEE220CF48400ED1508 /* SecretKeys.swift in Sources */,
 				05B82DDF220CE51B00ED1508 /* EventbriteModel.swift in Sources */,
@@ -430,7 +427,6 @@
 				05B82DEA220CF3C900ED1508 /* WeatherAPIClient.swift in Sources */,
 				05080BB42231A82F001ACBF2 /* ZipCodeHelper.swift in Sources */,
 				059EFA6B2232C88900FC59DD /* ToDoListView.swift in Sources */,
-				059EFA782233232800FC59DD /* LoginView.swift in Sources */,
 				05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */,
 				0586C22922122AB10095C3AF /* Overview.swift in Sources */,
 				0586C2252212215E0095C3AF /* ToDoView.swift in Sources */,

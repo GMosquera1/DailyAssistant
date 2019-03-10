@@ -16,7 +16,7 @@ class ToDoListView: UIView {
       let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont(name: "thonburi", size: 20)
-        label.text = "Add Reminder"
+        label.text = "Enter Reminder"
         return label
     }()
     
@@ -24,7 +24,7 @@ class ToDoListView: UIView {
         let textView = UITextView()
         textView.backgroundColor = #colorLiteral(red: 0.09883943945, green: 0.0765587464, blue: 0.4475694299, alpha: 0.7132384418)
         textView.textColor = .white
-        textView.text = "Enter To-Do"
+        textView.text = placeholderText
         return textView
     }()
     
@@ -41,12 +41,21 @@ class ToDoListView: UIView {
     
     public lazy var addNoteButton: UIButton = {
         let addButton = UIButton()
-        addButton.setTitle("Add Note", for: .normal)
+        addButton.setTitle("Add Reminder", for: .normal)
         addButton.setTitleColor(.black, for: .normal)
         addButton.titleLabel?.font = UIFont.init(name: "thonburi", size: 18)
         addButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
         addButton.addTarget(self, action: #selector(addNewNote), for: .touchUpInside)
         return addButton
+    }()
+    
+    public lazy var swipeLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        label.font = UIFont(name: "thonburi", size: 18)
+        label.text = "Swipe to Add Event"
+        return label
     }()
     
     @objc func addNewNote(sender: UIButton) {
@@ -101,15 +110,17 @@ class ToDoListView: UIView {
         addSubview(newItemTextView)
         addSubview(addNoteButton)
         addSubview(toggles)
+        addSubview(swipeLabel)
         
        
        toDoLabel.translatesAutoresizingMaskIntoConstraints = false
         newItemTextView.translatesAutoresizingMaskIntoConstraints = false
         addNoteButton.translatesAutoresizingMaskIntoConstraints = false
         toggles.translatesAutoresizingMaskIntoConstraints = false
+        swipeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            toDoLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50), toDoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), newItemTextView.topAnchor.constraint(equalTo: toDoLabel.bottomAnchor, constant: 22), newItemTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), newItemTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), newItemTextView.heightAnchor.constraint(equalToConstant: 200), addNoteButton.topAnchor.constraint(equalTo: newItemTextView.bottomAnchor), addNoteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -170),toggles.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor), toggles.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+            toDoLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50), toDoLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), newItemTextView.topAnchor.constraint(equalTo: toDoLabel.bottomAnchor, constant: 22), newItemTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), newItemTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), newItemTextView.heightAnchor.constraint(equalToConstant: 200), addNoteButton.topAnchor.constraint(equalTo: newItemTextView.bottomAnchor, constant: 22), addNoteButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -160), swipeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor), swipeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), swipeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11),swipeLabel.bottomAnchor.constraint(equalTo: toggles.topAnchor),toggles.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor), toggles.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
         
     }
     

@@ -12,21 +12,30 @@ import Firebase
 @UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    var usersession: UserSession!
-    var storageManager: StorageManager!
+//
+//    var usersession: UserSession!
+//    var storageManager: StorageManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        FirebaseApp.configure()
-        usersession = UserSession()
-        storageManager = StorageManager()
-        // Override point for customization after application launch.
-//        
-       window = UIWindow(frame: UIScreen.main.bounds)
+//        FirebaseApp.configure()
+//        usersession = UserSession()
+//        storageManager = StorageManager()
+//
+//       window = UIWindow(frame: UIScreen.main.bounds)
+//
+//        if let _ = usersession.getCurrentUser() {
+//            let storyboard = UIStoryboard(name: "MainTabBar", bundle: nil)
+//            let mainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBar") as! MainTabBar
+//            window?.rootViewController = mainTabBarController
+//        }
+//        else {
+//            let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: nil)
+//            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//            window?.rootViewController = loginViewController
+//        }
 //        window?.makeKeyAndVisible()
-
-//        window?.rootViewController = agendaCollectionViewController
+        
       return true
     }
 

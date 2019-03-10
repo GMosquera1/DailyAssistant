@@ -18,8 +18,7 @@ class ToDoListViewController: UIViewController {
         super.viewDidLoad()
         view.addSubview(toDoListView)
         self.view.backgroundColor = .green
-  
-        
+
 //        toDoListView.newItemTextView.delegate = self
         
     }

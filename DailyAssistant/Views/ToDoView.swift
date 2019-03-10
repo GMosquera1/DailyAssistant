@@ -11,17 +11,6 @@ import EventKit
 
 class ToDoView: UIView {
     
-//    public lazy var toggles: UIPageControl = {
-//        let toggle = UIPageControl()
-//        toggle.isUserInteractionEnabled = true
-//        toggle.numberOfPages = 2
-//        toggle.currentPage = 1
-//        toggle.currentPageIndicatorTintColor = .blue
-//        toggle.updateCurrentPageDisplay()
-//        toggle.pageIndicatorTintColor = .lightGray
-//        return toggle
-//    }()
-    
     public lazy var eventInfoView: UITextView = {
         let infoView = UITextView()
         infoView.text = "hello"
@@ -65,8 +54,27 @@ class ToDoView: UIView {
         addButton.addTarget(self, action: #selector(addNewEvent), for: .touchUpInside)
         return addButton
     }()
-
     
+    public lazy var swipeLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)
+        label.font = UIFont(name: "thonburi", size: 18)
+        label.text = "Swipe to Add Reminder"
+        return label
+    }()
+    
+        public lazy var toggles: UIPageControl = {
+            let toggle = UIPageControl()
+            toggle.isUserInteractionEnabled = true
+            toggle.numberOfPages = 2
+            toggle.currentPage = 1
+            toggle.currentPageIndicatorTintColor = .blue
+            toggle.updateCurrentPageDisplay()
+            toggle.pageIndicatorTintColor = .lightGray
+            return toggle
+        }()
+
     @objc func addNewEvent(sender: UIButton) {
         sender.setTitle("Event Added", for: .normal)
         sender.setTitleColor(.white, for: .normal)
@@ -121,7 +129,8 @@ class ToDoView: UIView {
         addSubview(notesField)
         addSubview(datePicker)
         addSubview(addEventButton)
-       // addSubview(toggles)
+        addSubview(swipeLabel)
+        addSubview(toggles)
         
         
         titleTextField.translatesAutoresizingMaskIntoConstraints = false
@@ -129,8 +138,9 @@ class ToDoView: UIView {
         notesField.translatesAutoresizingMaskIntoConstraints = false
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         addEventButton.translatesAutoresizingMaskIntoConstraints = false
-//        toggles.translatesAutoresizingMaskIntoConstraints = false
+        swipeLabel.translatesAutoresizingMaskIntoConstraints = false
+        toggles.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([titleTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),titleTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), titleTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 18),locationTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), locationTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), notesField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 18),notesField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), notesField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), datePicker.topAnchor.constraint(equalTo: notesField.bottomAnchor, constant: 18), datePicker.trailingAnchor.constraint(equalTo: trailingAnchor), datePicker.leadingAnchor.constraint(equalTo: leadingAnchor), addEventButton.bottomAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 25), addEventButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -170)])
+        NSLayoutConstraint.activate([titleTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),titleTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), titleTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 18),locationTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), locationTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), notesField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 18),notesField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), notesField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), datePicker.topAnchor.constraint(equalTo: notesField.bottomAnchor, constant: 18), datePicker.trailingAnchor.constraint(equalTo: trailingAnchor), datePicker.leadingAnchor.constraint(equalTo: leadingAnchor), addEventButton.bottomAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 25), addEventButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -170), swipeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor), swipeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), swipeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), swipeLabel.bottomAnchor.constraint(equalTo: toggles.topAnchor),toggles.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor), toggles.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
     }
 }

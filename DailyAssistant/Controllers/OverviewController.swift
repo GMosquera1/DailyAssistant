@@ -14,7 +14,7 @@ import MapKit
 class OverviewController: UIViewController {
     
     public var cityName = ""
-    var alert: UIAlertController!
+
     public var forecast = [Periods](){
         didSet {
             DispatchQueue.main.async {
@@ -49,20 +49,16 @@ class OverviewController: UIViewController {
         }
         overView.weatherCV.dataSource = self
         overView.weatherCV.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "WeatherCollectionViewCell")
-        alert = UIAlertController(title: "Enter", message: "Name of Current City", preferredStyle: .alert)
-        alert.addTextField { (textField) in
-            textField.placeholder = "Enter Zip Code"
-            let ok = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
-                self.dismiss(animated: true, completion: nil)
-            })
-            self.alert.addAction(ok)
+        let eventStore = EKEventStore()
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .authorized:
+            
+            insertEvent(store: eventStore)
+        case .denied:
+            print("access denied")
+        default:
+            <#code#>
         }
-        present(alert, animated: true, completion: nil)
-//        showAlert(title:  "Enter Zipcode" , message: "Please enter zipcode", style: .alert) { (alert) in
-//            
-//      
-//        }
-        // create UI Alert with an action called showalert or
     }
     
     func setUp() {
@@ -156,7 +152,7 @@ extension OverviewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WeatherCollectionViewCell", for: indexPath) as? WeatherCollectionViewCell else { return UICollectionViewCell() }
         let day = forecast[indexPath.row]
-        cell.weatherCity.text = "Welcome to "
+       // cell.weatherCity.text = "Welcome to \(cit"
         cell.weatherImage.image = UIImage(named: day.icon)
         cell.weatherDay.text = "\(day.dateFormattedTime)"
         cell.weatherHigh.text = "H: \(day.maxTempF)°F/ \(day.maxTempC)°C"
@@ -165,8 +161,6 @@ extension OverviewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
 }
-
-
 
 class ListTableViewFooter: UITableViewHeaderFooterView {
     
