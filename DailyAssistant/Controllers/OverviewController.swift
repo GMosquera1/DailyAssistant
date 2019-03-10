@@ -33,9 +33,13 @@ class OverviewController: UIViewController {
         self.view.addSubview(overView)
 
         view.backgroundColor = UIColor(patternImage: UIImage(named: "stars")!)
+//        overView.eventsTableView.dataSource = self
+//        overView.eventsTableView.delegate = self
+//        overView.eventsTableView.backgroundColor = UIColor.red
         overView.toDoTableView.dataSource = self
         overView.toDoTableView.delegate = self
         overView.toDoTableView.backgroundColor = UIColor.clear
+        overView.toDoTableView.reloadData()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(newVC))
         setUp()
         WeatherAPIClient.searchWeather(zipcode: "10014", isZipcode: true) { (appError, periods) in
@@ -52,12 +56,51 @@ class OverviewController: UIViewController {
         let eventStore = EKEventStore()
         switch EKEventStore.authorizationStatus(for: .event) {
         case .authorized:
-            
             insertEvent(store: eventStore)
         case .denied:
             print("access denied")
+        case .notDetermined:
+            eventStore.requestAccess(to: .event, completion: {[weak self] (granted: Bool, error: Error?) -> Void in
+                if granted {
+                    self!.insertEvent(store: eventStore)
+                } else {
+                    print("Access Denied")
+                }
+            })
         default:
-            <#code#>
+            print("Access denied")
+        }
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showToDoDetail" {
+            guard let indexPath = overView.toDoTableView.indexPathForSelectedRow,
+            let toDoViewController = segue.destination as?
+            
+        }
+    }
+    
+    func insertEvent(store: EKEventStore) {
+        let calendars = store.calendars(for: .event)
+        
+        for calendar in calendars {
+            if calendar.title == "Calendar" {
+                let startDate = Date()
+                let endDate = startDate.addingTimeInterval(2 * 60 * 60)
+                let event = EKEvent(eventStore: store)
+                event.calendar = calendar
+                event.title = "New Event"
+                event.startDate = startDate
+                event.endDate = endDate
+                
+                do {
+                    try store.save(event, span: .thisEvent)
+                }
+                catch {
+                    print("Error saving event in calendar")
+                }
+            }
         }
     }
     

@@ -30,6 +30,7 @@
 		059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7D2233268E00FC59DD /* DatabaseManager.swift */; };
 		059EFA80223378E600FC59DD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA7F223378E600FC59DD /* ProfileViewController.swift */; };
 		059EFA8222337DD400FC59DD /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA8122337DD400FC59DD /* ImageCache.swift */; };
+		059EFA8C2235969400FC59DD /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059EFA8B2235969400FC59DD /* ItemDetailViewController.swift */; };
 		05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B7E1072217813D00B299F7 /* EventsModel.swift */; };
 		05B82D91220B5C7400ED1508 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D90220B5C7400ED1508 /* AppDelegate.swift */; };
 		05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B82D92220B5C7400ED1508 /* ToDoViewController.swift */; };
@@ -77,6 +78,7 @@
 		059EFA7D2233268E00FC59DD /* DatabaseManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		059EFA7F223378E600FC59DD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		059EFA8122337DD400FC59DD /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		059EFA8B2235969400FC59DD /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 		05B7E1072217813D00B299F7 /* EventsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsModel.swift; sourceTree = "<group>"; };
 		05B82D8D220B5C7400ED1508 /* DailyAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05B82D90220B5C7400ED1508 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				05080BB1222F35AE001ACBF2 /* UIViewController+Alerts.swift */,
 				059EFA792233259000FC59DD /* MainTabBar.swift */,
 				0586C22622122A740095C3AF /* OverviewController.swift */,
+				059EFA8B2235969400FC59DD /* ItemDetailViewController.swift */,
 				05080BAD222ED385001ACBF2 /* ToDoListViewController.swift */,
 				059D5B4D223214E500C3BD14 /* EventPagesViewController.swift */,
 				05E3CA6622283F42002579DC /* AgendaCollectionViewController.swift */,
@@ -403,6 +406,7 @@
 				05B7E1082217813D00B299F7 /* EventsModel.swift in Sources */,
 				05B82D93220B5C7400ED1508 /* ToDoViewController.swift in Sources */,
 				059EFA7C2233266900FC59DD /* StorageKeys.swift in Sources */,
+				059EFA8C2235969400FC59DD /* ItemDetailViewController.swift in Sources */,
 				05E3CA6722283F42002579DC /* AgendaCollectionViewController.swift in Sources */,
 				05E3CA0A221C8BFA002579DC /* NearbyViewController.swift in Sources */,
 				05B82DE3220CE5E000ED1508 /* EventbriteAPIClient.swift in Sources */,

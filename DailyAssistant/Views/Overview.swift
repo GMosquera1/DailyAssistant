@@ -27,9 +27,8 @@ class Overview: UIView {
 //       var cal = NSCalendar(
 //        
 //        return cal
-//        
 //    }()
-    
+//    
     
     public lazy var toDoTableView: UITableView = {
         let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
@@ -44,6 +43,19 @@ class Overview: UIView {
         tv.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         tv.layer.cornerRadius = 10.0
         //    toDoTableView.reloadData()
+        return tv
+    }()
+    
+    public lazy var eventsTableView: UITableView = {
+        let barHeight: CGFloat = UIApplication.shared.statusBarFrame.size.height
+        let displayWidth: CGFloat = self.frame.width
+        let displayHeight: CGFloat = self.frame.height
+        var tv = UITableView()
+        tv.sectionIndexBackgroundColor = .clear
+        tv.backgroundColor = UIColor.clear
+        tv = UITableView(frame: .init(x: 25, y: 25, width: 25, height: 25) , style: .grouped)
+        tv.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        tv.layer.cornerRadius = 10.0
         return tv
     }()
     
@@ -62,13 +74,16 @@ class Overview: UIView {
         
         addSubview(weatherCV)
         addSubview(toDoTableView)
+        addSubview(eventsTableView)
         
-        toDoTableView.translatesAutoresizingMaskIntoConstraints = false
         weatherCV.translatesAutoresizingMaskIntoConstraints = false
+        toDoTableView.translatesAutoresizingMaskIntoConstraints = false
+        eventsTableView.translatesAutoresizingMaskIntoConstraints = false
+        
         
         NSLayoutConstraint.activate([weatherCV.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11),weatherCV.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), weatherCV.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),weatherCV.heightAnchor.constraint(equalToConstant: 150)])
         
-        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: weatherCV.bottomAnchor), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)])
+        NSLayoutConstraint.activate([toDoTableView.topAnchor.constraint(equalTo: weatherCV.bottomAnchor), toDoTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), toDoTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), toDoTableView.bottomAnchor.constraint(equalTo: eventsTableView.topAnchor),eventsTableView.topAnchor.constraint(equalTo: toDoTableView.bottomAnchor), eventsTableView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), eventsTableView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), eventsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)])
     }
     
 }
