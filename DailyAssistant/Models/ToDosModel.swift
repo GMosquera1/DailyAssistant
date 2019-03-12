@@ -12,7 +12,6 @@ final class ToDosModel {
     private static var items = [ToDo]()
     
     static func getItems() -> [ToDo] {
-        // FileManager
         let path = DataPersistenceManager.filepathToDocumentsDirectory(filename: filename).path
         if FileManager.default.fileExists(atPath: path) {
             if let data = FileManager.default.contents(atPath: path) {

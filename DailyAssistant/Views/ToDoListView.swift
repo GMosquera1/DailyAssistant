@@ -45,7 +45,7 @@ class ToDoListView: UIView {
         addButton.setTitleColor(.black, for: .normal)
         addButton.titleLabel?.font = UIFont.init(name: "thonburi", size: 18)
         addButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        addButton.addTarget(self, action: #selector(addNewNote), for: .touchUpInside)
+//        addButton.addTarget(self, action: #selector(addNewNote), for: .touchUpInside)
         return addButton
     }()
     
@@ -58,40 +58,40 @@ class ToDoListView: UIView {
         return label
     }()
     
-    @objc func addNewNote(sender: UIButton) {
-        sender.setTitle("Event Added", for: .normal)
-        sender.setTitleColor(.white, for: .normal)
-        let eventStore: EKEventStore = EKEventStore()
-        
-        eventStore.requestAccess(to: .event) {(granted, error) in
-            if (granted) && (error == nil)
-            {
-                print("granted \(granted)")
-                print("error \(error)")
-                
-                let event:EKEvent = EKEvent(eventStore: eventStore)
-                DispatchQueue.main.async {
-                    event.title = self.newItemTextView.text
-                }
-                event.startDate = Date()
-                event.endDate = Date()
-                event.notes = "This is a note"
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                } catch let error as NSError{
-                    print("error: \(error)")
-                }
-                print("Save Event")
-                
-            } else {
-                print("error: \(error)")
-                
-            }
-            
-        }
-        print("pressed")
-    }
+//    @objc func addNewNote(sender: UIButton) {
+////        sender.setTitle("Event Added", for: .normal)
+////        sender.setTitleColor(.white, for: .normal)
+////        let eventStore: EKEventStore = EKEventStore()
+////        
+////        eventStore.requestAccess(to: .event) {(granted, error) in
+////            if (granted) && (error == nil)
+////            {
+////                print("granted \(granted)")
+////                print("error \(error)")
+////
+////                let event:EKEvent = EKEvent(eventStore: eventStore)
+////                DispatchQueue.main.async {
+////                    event.title = self.newItemTextView.text
+////                }
+////                event.startDate = Date()
+////                event.endDate = Date()
+////                event.notes = "This is a note"
+////                event.calendar = eventStore.defaultCalendarForNewEvents
+////                do {
+////                    try eventStore.save(event, span: .thisEvent)
+////                } catch let error as NSError{
+////                    print("error: \(error)")
+////                }
+////                print("Save Event")
+////
+////            } else {
+////                print("error: \(error)")
+////                
+////            }
+////
+////        }
+////        print("pressed")
+//    }
     
     override init(frame: CGRect){ super.init(frame: UIScreen.main.bounds)
         commonInit()

@@ -15,6 +15,8 @@
 		0586C22722122A740095C3AF /* OverviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22622122A740095C3AF /* OverviewController.swift */; };
 		0586C22922122AB10095C3AF /* Overview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C22822122AB10095C3AF /* Overview.swift */; };
 		0586C24A221399050095C3AF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586C249221399050095C3AF /* TableViewCell.swift */; };
+		058E6C30223698BB00D0ABC4 /* EventsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E6C2F223698BB00D0ABC4 /* EventsData.swift */; };
+		058E6C322236991000D0ABC4 /* EventsDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058E6C312236991000D0ABC4 /* EventsDataModel.swift */; };
 		059D5B452231D2CD00C3BD14 /* ToDosModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B442231D2CD00C3BD14 /* ToDosModel.swift */; };
 		059D5B472231D2FA00C3BD14 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B462231D2FA00C3BD14 /* ToDo.swift */; };
 		059D5B492231D36200C3BD14 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */; };
@@ -63,6 +65,8 @@
 		0586C22622122A740095C3AF /* OverviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewController.swift; sourceTree = "<group>"; };
 		0586C22822122AB10095C3AF /* Overview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overview.swift; sourceTree = "<group>"; };
 		0586C249221399050095C3AF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		058E6C2F223698BB00D0ABC4 /* EventsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsData.swift; sourceTree = "<group>"; };
+		058E6C312236991000D0ABC4 /* EventsDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDataModel.swift; sourceTree = "<group>"; };
 		059D5B442231D2CD00C3BD14 /* ToDosModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDosModel.swift; sourceTree = "<group>"; };
 		059D5B462231D2FA00C3BD14 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		059D5B482231D36200C3BD14 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
@@ -183,7 +187,9 @@
 				05B7E1072217813D00B299F7 /* EventsModel.swift */,
 				05B82DEB220CF41700ED1508 /* WeatherModel.swift */,
 				059D5B442231D2CD00C3BD14 /* ToDosModel.swift */,
+				058E6C312236991000D0ABC4 /* EventsDataModel.swift */,
 				059D5B462231D2FA00C3BD14 /* ToDo.swift */,
+				058E6C2F223698BB00D0ABC4 /* EventsData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -398,6 +404,7 @@
 			files = (
 				05080BAE222ED385001ACBF2 /* ToDoListViewController.swift in Sources */,
 				059EFA8222337DD400FC59DD /* ImageCache.swift in Sources */,
+				058E6C322236991000D0ABC4 /* EventsDataModel.swift in Sources */,
 				05E3CA402225C7CA002579DC /* NearbyTableViewCell.swift in Sources */,
 				059EFA7E2233268E00FC59DD /* DatabaseManager.swift in Sources */,
 				0586C24A221399050095C3AF /* TableViewCell.swift in Sources */,
@@ -433,6 +440,7 @@
 				059EFA6B2232C88900FC59DD /* ToDoListView.swift in Sources */,
 				05080BB2222F35AE001ACBF2 /* UIViewController+Alerts.swift in Sources */,
 				0586C22922122AB10095C3AF /* Overview.swift in Sources */,
+				058E6C30223698BB00D0ABC4 /* EventsData.swift in Sources */,
 				0586C2252212215E0095C3AF /* ToDoView.swift in Sources */,
 				05E3CA6922283F8F002579DC /* AgendaCollectionViewCell.swift in Sources */,
 				05E3CA42222631DD002579DC /* UserDefaultsKey.swift in Sources */,

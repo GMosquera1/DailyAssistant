@@ -30,12 +30,12 @@ class NearbyViewController: UIViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+         print(DataPersistenceManager.documentsDirectory())
         title = "Nearby Events"
         view.addSubview(nearbyView)
-        self.view.backgroundColor = #colorLiteral(red: 0.9403156638, green: 0.7390406728, blue: 0.7834907174, alpha: 1)
+        self.view.backgroundColor = #colorLiteral(red: 0.06274510175, green: 0, blue: 0.1921568662, alpha: 1)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Locate Me", style: .plain, target: self, action: #selector(CurrentLocate))
         nearbyView.mapView.delegate = self
         nearbyView.tableView.dataSource = self
@@ -43,6 +43,8 @@ class NearbyViewController: UIViewController {
         locationManager.delegate = self
         nearbyView.searchBar.delegate = self
         searchEvents(keyword: "yoga")
+        checkLocationServices()
+        setupKeyboardToolbar()
         alert = UIAlertController(title: "Enter", message: "Name of Current City", preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Enter Zip Code"
@@ -64,14 +66,15 @@ class NearbyViewController: UIViewController {
         }
     }
     
-    //    fileprivate func addAnnotations() {
-    //        nearbyView.mapView.removeAnnotation(annotations)
-    //        annotations.removeAll()
-    //        for event in events {
-    //            let annotation = MKPointAnnotation()
-    //            annotation.coordinate = CLLocationCoordinate2D(latitude: <#T##CLLocationDegrees#>, longitude: <#T##CLLocationDegrees#>)
-    //        }
-    //    }
+        fileprivate func addAnnotations() {
+//            nearbyView.mapView.removeAnnotation(annotations)
+//            annotations.removeAll()
+            
+//            for event in events {
+//                let annotation = MKPointAnnotation()
+//                annotation.coordinate = CLLocationCoordinate2D(latitude: venue, longitude: <#T##CLLocationDegrees#>)
+//            }
+        }
     
     private func userDefaultSearchTerm() -> String {
         if let searchTermFromUserDefaults =
@@ -87,8 +90,34 @@ class NearbyViewController: UIViewController {
         nearbyView.mapView.setCenter(myCurrentRegion.center, animated: true)
     }
     
+    func checkLocationServices() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse { locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            nearbyView.mapView.showsUserLocation = true
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+            nearbyView.mapView.showsUserLocation = true
+    }
+    
 }
 
+
+private func setupKeyboardToolbar() {
+    let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width:self.view.frame.size.width , height: 30))
+    let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let doneButton: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+    toolbar.setItems([flexSpace, doneButton], animated: false)
+    toolbar.sizeToFit()
+    nearbyView.searchBar.inputAccessoryView = toolbar
+}
+    @objc private func doneButtonAction() {
+        self.view.endEditing(true)
+    }
+    
+    
+}
 extension NearbyViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {

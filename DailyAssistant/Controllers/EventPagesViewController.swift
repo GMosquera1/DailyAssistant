@@ -30,7 +30,7 @@ class EventPagesViewController: UIPageViewController, UIPageViewControllerDelega
         let initialPage = 0
         let page1 = ToDoListViewController()
         let page2 = ToDoViewController()
-        
+
         self.pages.append(page1)
         self.pages.append(page2)
  setViewControllers([pages[initialPage]], direction: .forward, animated: true, completion: nil)
@@ -39,7 +39,7 @@ class EventPagesViewController: UIPageViewController, UIPageViewControllerDelega
         setupUI()
         arrangeSubviews()
     }
-    
+
 //    override func viewDidLayoutSubviews() {
 //        for subView in self.view.subviews as! [UIView] {
 //            if subView is UIScrollView {

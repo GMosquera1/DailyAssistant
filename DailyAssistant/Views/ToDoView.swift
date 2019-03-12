@@ -16,19 +16,15 @@ class ToDoView: UIView {
         infoView.text = "hello"
         return infoView
     }()
-    public lazy var titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter Title"
-        textField.textColor = .black
-        textField.font = UIFont.init(name: "thonburi", size: 18)
-        return textField
+    public lazy var titleTextView: UITextView = {
+        let textView = UITextView()
+        textView.font = UIFont.init(name: "thonburi", size: 18)
+        return textView
     }()
-    public lazy var locationTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "Enter Location"
-        textField.textColor = .black
-        textField.font = UIFont.init(name: "thonburi", size: 18)
-        return textField
+    public lazy var descriptionTextView: UITextView = {
+        let textView = UITextView()
+         textView.font = UIFont.init(name: "thonburi", size: 18)
+        return textView
     }()
     
     public lazy var datePicker: UIDatePicker = {
@@ -39,7 +35,7 @@ class ToDoView: UIView {
     
     public lazy var notesField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Enter Notes"
+        textField.placeholder = "Enter Event"
         textField.textColor = .black
         textField.font = UIFont.init(name: "thonburi", size: 18)
         return textField
@@ -51,7 +47,7 @@ class ToDoView: UIView {
         addButton.setTitleColor(.black, for: .normal)
         addButton.titleLabel?.font = UIFont.init(name: "thonburi", size: 18)
         addButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
-        addButton.addTarget(self, action: #selector(addNewEvent), for: .touchUpInside)
+//        addButton.addTarget(self, action: #selector(addNewEvent), for: .touchUpInside)
         return addButton
     }()
     
@@ -75,40 +71,40 @@ class ToDoView: UIView {
             return toggle
         }()
 
-    @objc func addNewEvent(sender: UIButton) {
-        sender.setTitle("Event Added", for: .normal)
-        sender.setTitleColor(.white, for: .normal)
-        let eventStore: EKEventStore = EKEventStore()
-        
-        eventStore.requestAccess(to: .event) {(granted, error) in
-            if (granted) && (error == nil)
-            {
-                print("granted \(granted)")
-                print("error \(error)")
-                
-                let event:EKEvent = EKEvent(eventStore: eventStore)
-                DispatchQueue.main.async {
-                    event.title = self.titleTextField.text
-                }
-                event.startDate = Date()
-                event.endDate = Date()
-                event.notes = "This is a note"
-                event.calendar = eventStore.defaultCalendarForNewEvents
-                do {
-                    try eventStore.save(event, span: .thisEvent)
-                } catch let error as NSError{
-                    print("error: \(error)")
-                }
-                print("Save Event")
-                
-            } else {
-                print("error: \(error)")
-                
-            }
-            
-        }
-        print("pressed")
-    }
+//    @objc func addNewEvent(sender: UIButton) {
+//        sender.setTitle("Event Added", for: .normal)
+//        sender.setTitleColor(.white, for: .normal)
+//        let eventStore: EKEventStore = EKEventStore()
+//        
+//        eventStore.requestAccess(to: .event) {(granted, error) in
+//            if (granted) && (error == nil)
+//            {
+//                print("granted \(granted)")
+//                print("error \(error)")
+//                
+//                let event:EKEvent = EKEvent(eventStore: eventStore)
+//                DispatchQueue.main.async {
+//                    event.title = self.titleTextView.text
+//                }
+//                event.startDate = Date()
+//                event.endDate = Date()
+//                event.notes = "This is a note"
+//                event.calendar = eventStore.defaultCalendarForNewEvents
+//                do {
+//                    try eventStore.save(event, span: .thisEvent)
+//                } catch let error as NSError{
+//                    print("error: \(error)")
+//                }
+//                print("Save Event")
+//                
+//            } else {
+//                print("error: \(error)")
+//                
+//            }
+//            
+//        }
+//        print("pressed")
+//    }
 
     override init(frame: CGRect){ super.init(frame: UIScreen.main.bounds)
         commonInit()
@@ -124,8 +120,8 @@ class ToDoView: UIView {
     
     func setConstraints() {
         
-        addSubview(titleTextField)
-        addSubview(locationTextField)
+        addSubview(titleTextView)
+        addSubview(descriptionTextView)
         addSubview(notesField)
         addSubview(datePicker)
         addSubview(addEventButton)
@@ -133,14 +129,14 @@ class ToDoView: UIView {
         addSubview(toggles)
         
         
-        titleTextField.translatesAutoresizingMaskIntoConstraints = false
-        locationTextField.translatesAutoresizingMaskIntoConstraints = false
+        titleTextView.translatesAutoresizingMaskIntoConstraints = false
+        descriptionTextView.translatesAutoresizingMaskIntoConstraints = false
         notesField.translatesAutoresizingMaskIntoConstraints = false
         datePicker.translatesAutoresizingMaskIntoConstraints = false
         addEventButton.translatesAutoresizingMaskIntoConstraints = false
         swipeLabel.translatesAutoresizingMaskIntoConstraints = false
         toggles.translatesAutoresizingMaskIntoConstraints = false
         
-        NSLayoutConstraint.activate([titleTextField.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),titleTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), titleTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), locationTextField.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 18),locationTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), locationTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), notesField.topAnchor.constraint(equalTo: locationTextField.bottomAnchor, constant: 18),notesField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), notesField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), datePicker.topAnchor.constraint(equalTo: notesField.bottomAnchor, constant: 18), datePicker.trailingAnchor.constraint(equalTo: trailingAnchor), datePicker.leadingAnchor.constraint(equalTo: leadingAnchor), addEventButton.bottomAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 25), addEventButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -170), swipeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor), swipeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), swipeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), swipeLabel.bottomAnchor.constraint(equalTo: toggles.topAnchor),toggles.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor), toggles.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
+        NSLayoutConstraint.activate([titleTextView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 50),titleTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), titleTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), descriptionTextView.topAnchor.constraint(equalTo: titleTextView.bottomAnchor, constant: 18),descriptionTextView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), descriptionTextView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), notesField.topAnchor.constraint(equalTo: descriptionTextView.bottomAnchor, constant: 18),notesField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), notesField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), datePicker.topAnchor.constraint(equalTo: notesField.bottomAnchor, constant: 18), datePicker.trailingAnchor.constraint(equalTo: trailingAnchor), datePicker.leadingAnchor.constraint(equalTo: leadingAnchor), addEventButton.bottomAnchor.constraint(equalTo: datePicker.bottomAnchor, constant: 25), addEventButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -170), swipeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor), swipeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11), swipeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11), swipeLabel.bottomAnchor.constraint(equalTo: toggles.topAnchor),toggles.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor), toggles.centerXAnchor.constraint(equalTo: self.centerXAnchor)])
     }
 }

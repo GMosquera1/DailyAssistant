@@ -1,22 +1,22 @@
 //
-//  Item.swift
+//  Events.swift
 //  DailyAssistant
 //
-//  Created by Genesis Mosquera on 3/7/19.
+//  Created by Genesis Mosquera on 3/11/19.
 //  Copyright © 2019 Genesis Mosquera. All rights reserved.
 //
 
 import Foundation
-struct ToDo: Codable, Equatable {
-    let title: String
-//    let description: String
+
+struct EventsData: Codable, Equatable {
+    let description: String
     let createdAt: String
     public var dateFormattedString: String {
         let isoDateFormatter = ISO8601DateFormatter()
         var formattedDate = createdAt
         if let date = isoDateFormatter.date(from: createdAt) {
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMMM d, yyyy hh:mm a" 
+            dateFormatter.dateFormat = "MMMM d, yyyy hh:mm a"
             formattedDate = dateFormatter.string(from: date)
         }
         return formattedDate
