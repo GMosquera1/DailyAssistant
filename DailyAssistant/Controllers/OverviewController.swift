@@ -18,7 +18,7 @@ class OverviewController: UIViewController {
     public var forecast = [Periods](){
         didSet {
             DispatchQueue.main.async {
-                self.overView.toDoTableView.reloadData()
+                
                 self.overView.weatherCV.reloadData()
             }
         }
@@ -26,7 +26,7 @@ class OverviewController: UIViewController {
     
     let overView = Overview()
     let todoView = ToDoView()
-    
+    var events = EventsDataModel.getEventData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class OverviewController: UIViewController {
         overView.toDoTableView.delegate = self
          print(DataPersistenceManager.documentsDirectory())
         overView.toDoTableView.backgroundColor = UIColor.clear
-        overView.toDoTableView.reloadData()
+//        overView.toDoTableView.reloadData()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(newVC))
         setUp()
         WeatherAPIClient.searchWeather(zipcode: "10014", isZipcode: true) { (appError, periods) in
@@ -74,8 +74,8 @@ class OverviewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        overView.toDoTableView.reloadData()
-        overView.eventsTableView.reloadData()
+//        overView.toDoTableView.reloadData()
+//        overView.eventsTableView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -152,7 +152,7 @@ extension OverviewController: UITableViewDataSource {
         default:
             guard let cell =
                 tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else { return UITableViewCell()}
-            cell.textLabel?.text = "hola hola hola"
+            cell.textLabel?.text = events[indexPath.row].description
             cell.textLabel?.textColor = .white
             cell.layer.backgroundColor = UIColor.clear.cgColor
             cell.backgroundColor = UIColor.clear
@@ -167,11 +167,9 @@ extension OverviewController: UITableViewDataSource {
         case 0:
             return ToDosModel.getItems().count
         case 1:
-            return EventsDataModel.getEventData().count
-        case 2:
-            return ToDosModel.getItems().count
+            return events.count
         default:
-            return 2
+            return 0
         }
     }
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -183,7 +181,7 @@ extension OverviewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let arrTitles = ["Events", "Reminders","To-Dos"]
+        let arrTitles = ["Reminders", "Events","To-Dos"]
         return arrTitles[section]
     }
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

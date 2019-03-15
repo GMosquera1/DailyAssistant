@@ -11,6 +11,11 @@ import Foundation
 struct EventsData: Codable, Equatable {
     let description: String
     let createdAt: String
+    
+    init(description: String, createdAt: String) {
+        self.description = description
+        self.createdAt = createdAt
+    }
     public var dateFormattedString: String {
         let isoDateFormatter = ISO8601DateFormatter()
         var formattedDate = createdAt

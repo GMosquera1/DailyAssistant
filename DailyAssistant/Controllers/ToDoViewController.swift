@@ -25,7 +25,7 @@ class ToDoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(toDoView)
-         setUpTextViews()
+//         setUpTextViews()
         //toDoListView.newItemTextView.delegate = self
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .done, target: self, action: #selector(newEvent))
        self.view.bringSubviewToFront(self.pageControl)
@@ -33,12 +33,13 @@ class ToDoViewController: UIViewController {
 
         toDoView.titleTextView.becomeFirstResponder()
     }
-    
-    @objc func addNewEvent(sender: UIButton) {
-        sender.setTitle("Event Added", for: .normal)
-        sender.setTitleColor(.white, for: .normal)
+    func createNewEvent(){
+    let date = toDoView.datePicker.date.description
+     let event = EventsData(description: self.toDoView.notesField.text! , createdAt: date)
+        EventsDataModel.addEvent(event: event)
+    }
+    func addEventToCalendar(date: Date, title: String) {
         let eventStore: EKEventStore = EKEventStore()
-        
         eventStore.requestAccess(to: .event) {(granted, error) in
             if (granted) && (error == nil)
             {
@@ -47,18 +48,18 @@ class ToDoViewController: UIViewController {
                 
                 let event:EKEvent = EKEvent(eventStore: eventStore)
                 DispatchQueue.main.async {
-                    event.title = self.toDoView.titleTextView.text
+                    event.title = title
                 }
-                event.startDate = Date()
-                event.endDate = Date()
-                event.notes = "This is a note"
+                event.startDate = date
+                event.endDate = date
                 event.calendar = eventStore.defaultCalendarForNewEvents
                 do {
                     try eventStore.save(event, span: .thisEvent)
                 } catch let error as NSError{
                     print("error: \(error)")
                 }
-                print("Save Event")
+                //                let
+                //                EventsDataModel.addEvent(event: <#T##EventsData#>)
                 
             } else {
                 print("error: \(error)")
@@ -67,6 +68,14 @@ class ToDoViewController: UIViewController {
             
         }
         print("pressed")
+    }
+    @objc func addNewEvent(sender: UIButton) {
+        sender.setTitle("Event Added", for: .normal)
+        sender.setTitleColor(.blue, for: .normal)
+        let date = toDoView.datePicker.date
+        addEventToCalendar(date: date,title: self.toDoView.notesField.text!)
+        createNewEvent()
+
     }
     private func setUpTextViews() {
         toDoView.titleTextView.delegate = self
@@ -128,14 +137,12 @@ extension ToDoViewController: UITextViewDelegate {
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text == "" {
-            if textView == toDoView.titleTextView || textView == toDoView.descriptionTextView {
+            if textView == toDoView.titleTextView {
                 if textView == toDoView.titleTextView {
                     textView.text = toDoPlaceholder
                     textView.textColor = .lightGray
-                } else if textView == toDoView.descriptionTextView {
-                    textView.text = toDo2Placeholder
-                    textView.textColor = .lightGray
                 }
+                
             }
         }
     }

@@ -44,7 +44,7 @@ class ToDoListViewController: UIViewController {
         let toDo = ToDo.init(title: itemTitle, createdAt: timestamp)
         
         ToDosModel.addItem(item: toDo)
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
         
         button.isEnabled = true
     }
